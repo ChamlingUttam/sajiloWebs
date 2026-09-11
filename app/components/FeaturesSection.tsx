@@ -3,8 +3,8 @@ import { LayoutGrid, ListChecks } from "lucide-react";
 
 export default function FeaturesSection() {
   return (
-    <section className="bg-[#F3F1F7] px-4 sm:px-10 md:px-16 py-16 sm:py-20">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#F3F1F7] px-4 sm:px-10 md:px-10 py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div>
