@@ -140,12 +140,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/20 mt-10 pt-6 flex items-center justify-between text-sm text-gray-300">
+        <div className="border-t border-white/20 mt-10 pt-6 flex flex-col lg;items-center lg:justify-between text-sm text-gray-300">
         <span> 
           © 2026 Your Company. All rights reserved.
         </span>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col lg:gap-2 mt-2  gap-4">
           <span>
             Privacy Policy
           </span>
