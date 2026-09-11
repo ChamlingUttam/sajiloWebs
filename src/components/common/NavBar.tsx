@@ -5,7 +5,7 @@ export default function Navbar() {
   const navItems = ["Home", "Features", "Price", "Blog", "Contact"];
 
   return (
-    <nav className="w-full px-4 md:px-10 mt-5 text-white bg-[#3E1647]">
+    <nav className="w-full px-4 md:px-10 mt-5 text-white ">
       <div className="flex items-center justify-between max-w-7xl mx-auto py-4">
 
         {/* Logo */}
