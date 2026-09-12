@@ -20,7 +20,7 @@ export default function Hero() {
           <button className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium px-6 py-3 rounded-lg w-full sm:w-auto">
             Start 14-Days Free Trial
           </button>
-          <button className="bg-transparent border border-white text-white text-sm font-medium px-6 py-3 rounded-lg w-full sm:w-auto hover:bg-white/10">
+          <button className="bg-[#EDE8EE] border border-[#EDE8EE] text-[#160818] text-sm font-medium px-6 py-3 rounded-lg w-full sm:w-auto hover:bg-white/10">
             Book a Demo
           </button>
         </div>

@@ -21,16 +21,16 @@ export default function TemplatesSection() {
     </h2>
   </div>
 
-  <div className="flex flex-col items-center md:items-start gap-4">
-    <p className="text-purple-200/70 text-sm sm:text-base max-w-sm">
-      Choose from professionally designed templates tailored for every
-      type of hospitality property.
-    </p>
+  <div className="flex flex-col items-start gap-4">
+  <p className="text-purple-200/70 text-sm sm:text-base max-w-md text-left">
+    Choose from professionally designed templates tailored for every
+    type of hospitality property.
+  </p>
 
-    <button className="bg-[#FF751F] hover:bg-orange-600 text-white text-sm font-medium px-6 py-3 rounded-lg whitespace-nowrap border border-[#CC5E19] shadow-lg">
-      Start 14-Days Free Trial
-    </button>
-  </div>
+  <button className="bg-[#FF751F] hover:bg-orange-600 text-white text-sm font-medium px-6 py-3 rounded-lg whitespace-nowrap border border-[#CC5E19] shadow-lg">
+    Start 14-Days Free Trial
+  </button>
+</div>
 </div>
 
         {/* Templates grid */}
