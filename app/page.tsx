@@ -5,6 +5,9 @@ import FeaturesSection from "./components/FeaturesSection";
 import DashboardFeaturesSection from "./components/DashboardFeaturesSection";
 import TemplatesSection from "./components/TemplatesSection";
 import RoomManagementSection from "./components/RoomManagementSection";
+// import BookDemoSection from "../src/components/common/BookDemoSection";
+
+
 
 
 export default function page() {
@@ -19,6 +22,10 @@ export default function page() {
       <DashboardFeaturesSection />
       <TemplatesSection />
       <Faq />
+      
+      {/* <BookDemoSection /> */}
+     
+
       
     </>
   )

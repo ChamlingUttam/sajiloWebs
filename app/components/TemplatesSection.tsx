@@ -11,8 +11,7 @@ export default function TemplatesSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
        {/* Header */}
-<div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 text-center md:text-left">
-  <div>
+<div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 text-left">  <div>
     <h2 className="text-white font-bold text-2xl sm:text-3xl md:text-4xl leading-tight">
       Beautiful Templates Ready
     </h2>
