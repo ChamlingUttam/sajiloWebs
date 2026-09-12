@@ -4,6 +4,7 @@ import FeaturesSection from "./components/FeaturesSection";
   import Faq from "@/src/components/Faq/Faq";
 import DashboardFeaturesSection from "./components/DashboardFeaturesSection";
 import TemplatesSection from "./components/TemplatesSection";
+import RoomManagementSection from "./components/RoomManagementSection";
 
 
 export default function page() {
@@ -11,7 +12,10 @@ export default function page() {
     <>
       <Hero />
       <HeroWithDashboard />
+      
+
       <FeaturesSection />
+      <RoomManagementSection />
       <DashboardFeaturesSection />
       <TemplatesSection />
       <Faq />

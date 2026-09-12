@@ -1,11 +1,11 @@
-// import TermsOfUse from "./components/terms&condtition";
+import TermsOfUse from "./components/terms&condtition";
 
-// export default function page() {
-//   return (
-//     <>
+export default function page() {
+  return (
+    <>
     
-//         <TermsOfUse />
+        <TermsOfUse />
       
-//     </>
-//   )
-// }
+    </>
+  )
+}

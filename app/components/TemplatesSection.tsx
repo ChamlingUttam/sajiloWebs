@@ -27,7 +27,7 @@ export default function TemplatesSection() {
       type of hospitality property.
     </p>
 
-    <button className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium px-6 py-3 rounded-lg whitespace-nowrap">
+    <button className="bg-[#FF751F] hover:bg-orange-600 text-white text-sm font-medium px-6 py-3 rounded-lg whitespace-nowrap border border-[#CC5E19] shadow-lg">
       Start 14-Days Free Trial
     </button>
   </div>
