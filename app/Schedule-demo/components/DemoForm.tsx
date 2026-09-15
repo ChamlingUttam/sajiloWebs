@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { User } from "lucide-react";
-
+import { User, Building2, Calendar } from "lucide-react";
 type FormData = {
   firstName: string;
   lastName: string;
@@ -52,12 +51,15 @@ export default function DemoForm() {
     if (!data.lastName.trim()) next.lastName = "Last name is required";
 
     if (!data.phone.trim()) next.phone = "Phone number is required";
-    else if (!phoneRegex.test(data.phone.trim())) next.phone = "Enter a valid phone number";
+    else if (!phoneRegex.test(data.phone.trim()))
+      next.phone = "Enter a valid phone number";
 
     if (!data.email.trim()) next.email = "Email is required";
-    else if (!emailRegex.test(data.email.trim())) next.email = "Enter a valid email address";
+    else if (!emailRegex.test(data.email.trim()))
+      next.email = "Enter a valid email address";
 
-    if (!data.orgName.trim()) next.orgName = "Hotel/Organization name is required";
+    if (!data.orgName.trim())
+      next.orgName = "Hotel/Organization name is required";
     if (!data.businessType) next.businessType = "Select a business type";
     if (!data.roomCapacity) next.roomCapacity = "Select room capacity";
 
@@ -83,13 +85,15 @@ export default function DemoForm() {
 
   return (
     <div className="bg-[#4A1D57] rounded-2xl p-5 sm:p-7 text-white">
-      <h3 className="font-semibold text-lg sm:text-xl mb-1">Tell us about your organization</h3>
+      <h3 className="font-semibold text-lg sm:text-xl mb-1">
+        Tell us about your organization
+      </h3>
       <p className="text-purple-200/60 text-xs sm:text-sm mb-6">
-        Fill in the details below and our experts will prepare a custom demo for you.
+        Fill in the details below and our experts will prepare a custom demo for
+        you.
       </p>
 
       <form className="flex flex-col gap-6" onSubmit={handleSubmit} noValidate>
-        {/* Personal Information */}
         <fieldset>
           <legend className="flex items-center gap-2 text-sm font-medium mb-4">
             <User size={14} /> Personal Information
@@ -127,9 +131,10 @@ export default function DemoForm() {
           </div>
         </fieldset>
 
-        {/* Organization Details */}
         <fieldset>
-          <legend className="text-sm font-medium mb-4">Organization Details</legend>
+          <legend className="flex items-center gap-2 text-sm font-medium mb-4">
+            <Building2 size={14} /> Organization Details
+          </legend>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field
               label="Hotel/Organization Name"
@@ -144,7 +149,13 @@ export default function DemoForm() {
               value={data.businessType}
               onChange={(v) => update("businessType", v)}
               error={errors.businessType}
-              options={["Hotel", "Resort", "Boutique Stay", "Homestay", "Other"]}
+              options={[
+                "Hotel",
+                "Resort",
+                "Boutique Stay",
+                "Homestay",
+                "Other",
+              ]}
             />
             <SelectField
               label="Room Capacity"
@@ -157,9 +168,10 @@ export default function DemoForm() {
           </div>
         </fieldset>
 
-        {/* Schedule Details */}
         <fieldset>
-          <legend className="text-sm font-medium mb-4">Schedule Details</legend>
+          <legend className="flex items-center gap-2 text-sm font-medium mb-4">
+            <Calendar size={14} /> Schedule Details
+          </legend>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field
               label="Preferred Date"
@@ -177,28 +189,36 @@ export default function DemoForm() {
             />
           </div>
           <div className="mt-4">
-            <label className="text-xs text-purple-200/70 mb-1.5 block">Additional Notes</label>
-          <textarea
-  rows={3}
-  placeholder="Any specific modules you are interested in?"
-  value={data.notes}
-  onChange={(e) => update("notes", ((e.target as unknown) as { value?: string }).value ?? "")}
-  className="w-full bg-white/10 border border-white/10 rounded-lg px-3 py-2.5 text-sm placeholder:text-purple-200/40 focus:outline-none focus:ring-1 focus:ring-orange-400"
-/>
+            <label className="text-xs text-purple-200/70 mb-1.5 block">
+              Additional Notes
+            </label>
+            <textarea
+              rows={3}
+              placeholder="Any specific modules you are interested in?"
+              value={data.notes}
+              onChange={(e) =>
+                update(
+                  "notes",
+                  (e.target as unknown as { value?: string }).value ?? "",
+                )
+              }
+              className="w-full bg-white/10 border border-white/10 rounded-lg px-3 py-2.5 text-sm placeholder:text-purple-200/40 focus:outline-none focus:ring-1 focus:ring-orange-400"
+            />
           </div>
         </fieldset>
 
         {submitted && (
           <p className="text-sm text-green-400 bg-green-400/10 border border-green-400/30 rounded-lg px-3 py-2">
-            Thank you! Your demo request has been submitted — our team will reach out shortly.
+            Thank you! Your demo request has been submitted — our team will
+            reach out shortly.
           </p>
         )}
 
         <button
           type="submit"
-          className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium px-6 py-3 rounded-lg w-full sm:w-auto"
+          className="bg-[#FF751F] hover:bg-orange-600 text-white text-sm font-medium px-6 py-3 rounded-lg w-full sm:w-auto border border-[#CC5E19] "
         >
-          Book Demo Now
+          Send Message
         </button>
       </form>
     </div>
@@ -221,19 +241,23 @@ function Field({
   error?: string;
 }) {
   return (
-   <div>
-  <label className="text-xs text-purple-200/70 mb-1.5 block">{label}</label>
-  <input
-    type={type}
-    placeholder={placeholder}
-    value={value}
-    onChange={(e) => onChange(((e.target as unknown) as { value?: string }).value ?? "")}
-    className={`w-full bg-white/10 border rounded-lg px-3 py-2.5 text-sm placeholder:text-purple-200/40 focus:outline-none focus:ring-1 ${
-      error ? "border-red-400 focus:ring-red-400" : "border-white/10 focus:ring-orange-400"
-    }`}
-  />
-  {error && <p className="text-red-400 text-xs mt-1">{error}</p>}
-</div>
+    <div>
+      <label className="text-xs text-purple-200/70 mb-1.5 block">{label}</label>
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) =>
+          onChange((e.target as unknown as { value?: string }).value ?? "")
+        }
+        className={`w-full bg-white/10 border rounded-lg px-3 py-2.5 text-sm placeholder:text-purple-200/40 focus:outline-none focus:ring-1 ${
+          error
+            ? "border-red-400 focus:ring-red-400"
+            : "border-white/10 focus:ring-orange-400"
+        }`}
+      />
+      {error && <p className="text-red-400 text-xs mt-1">{error}</p>}
+    </div>
   );
 }
 
@@ -257,12 +281,16 @@ function SelectField({
       <label className="text-xs text-purple-200/70 mb-1.5 block">{label}</label>
       <select
         value={value}
-        onChange={(e) => onChange(((e.target as unknown) as { value?: string }).value ?? "")}
+        onChange={(e) =>
+          onChange((e.target as unknown as { value?: string }).value ?? "")
+        }
         className={`w-full bg-white/10 border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-1 ${
           value ? "text-white" : "text-purple-200/40"
         } ${error ? "border-red-400 focus:ring-red-400" : "border-white/10 focus:ring-orange-400"}`}
       >
-        <option value="" className="text-gray-500">{placeholder}</option>
+        <option value="" className="text-gray-500">
+          {placeholder}
+        </option>
         {options.map((opt) => (
           <option key={opt} value={opt} className="text-black">
             {opt}

@@ -127,19 +127,19 @@ export default function TermsOfUse() {
                 If you have any questions about this Privacy Policy, please
                 contact us at:
               </p>
-              <ul className="flex flex-col gap-0.5">
+              <ul className="flex flex-col gap-1">
                 <li>
                   Email:{" "}
                   <a
                     href="mailto:hamroyouthit@gmail.com"
-                    className="hover:text-white"
+                    className="text-[#491A53] "
                   >
                     hamroyouthit@gmail.com
                   </a>
                 </li>
                 <li>
                   Phone:{" "}
-                  <a href="tel:+9779746888890" className="hover:text-white">
+                  <a href="tel:+9779746888890" className="text-[#491A53] ">
                     +977 9746888890
                   </a>
                 </li>

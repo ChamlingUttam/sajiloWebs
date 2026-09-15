@@ -28,25 +28,27 @@ export default function FeaturesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Card 1 - Drag & Drop Builder */}
           <div>
-<div
-  className="relative aspect-[4/3] sm:aspect-[16/11] justify-between rounded-2xl overflow-hidden bg-cover bg-center"
-  style={{ backgroundImage: "url('/assets/homepage/purple-bg.jpg')" }}
->
-  <Image
-    src="/assets/homepage/Container.png"
-    alt="Website builder nav"
-    width={500}
-    height={500}
-    className="absolute left-[6%] top-[10%] w-[44%] h-auto"
-  />
-  <Image
-    src="/assets/homepage/Container (1).png"
-    alt="About us editor"
-    width={500}
-    height={500}
-    className="absolute left-[38%] top-[10%] w-[50%] h-auto"
-  />
-</div>
+            <div
+              className="relative aspect-[4/3] sm:aspect-[16/11] justify-between rounded-2xl overflow-hidden bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/assets/homepage/purple-bg.jpg')",
+              }}
+            >
+              <Image
+                src="/assets/homepage/Container.png"
+                alt="Website builder nav"
+                width={500}
+                height={500}
+                className="absolute left-[6%] top-[10%] w-[44%] h-auto"
+              />
+              <Image
+                src="/assets/homepage/Container (1).png"
+                alt="About us editor"
+                width={500}
+                height={500}
+                className="absolute left-[38%] top-[10%] w-[50%] h-auto"
+              />
+            </div>
             <div className="w-10 h-10 rounded-full bg-[#3B1547] flex items-center justify-center mb-3 mt-6">
               <LayoutGrid size={18} className="text-white" />
             </div>

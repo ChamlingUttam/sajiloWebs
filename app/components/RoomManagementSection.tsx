@@ -65,10 +65,10 @@ export default function RoomManagementSection() {
                   className="relative w-full max-w-[85%] h-auto rounded-lg shadow-2xl"
                 />
                 {title === "24/7 Support" && (
-  <button className="bg-white text-[#3E1647] text-base font-bold px-8 py-3 rounded-full border-4 border-[#6A4372] shadow-lg">
-    Contact Us
-  </button>
-)}
+                  <button className="bg-white text-[#3E1647] text-base font-bold px-8 py-3 rounded-full border-4 border-[#6A4372] shadow-lg">
+                    Contact Us
+                  </button>
+                )}
               </div>
               <div className="w-9 h-9 rounded-full bg-[#3B1547] flex items-center justify-center">
                 <Icon size={16} className="text-white" />
