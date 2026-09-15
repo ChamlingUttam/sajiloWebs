@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaInstagram,FaTiktok, FaWhatsapp} from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 
@@ -69,14 +70,14 @@ export default function Footer() {
 
               <ul className="flex flex-col gap-3 text-sm text-gray-200">
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link href="/feature" className="hover:text-white">
                     Features
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link href="pricing" className="hover:text-white">
                     Pricing
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white">
@@ -96,19 +97,19 @@ export default function Footer() {
               <ul className="flex flex-col gap-3 text-sm text-gray-200">
                
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link href="/faqs" className="hover:text-white">
                     FAQ
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link href="/contact" className="hover:text-white">
                     Contact
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link href="/blogs" className="hover:text-white">
                     Blog
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -140,16 +141,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/20 mt-10 pt-6 flex flex-col lg;items-center lg:justify-between text-sm text-gray-300">
+        <div className="border-t border-white/20 mt-10 pt-6 flex flex-col lg:flex-row lg:items-center lg:justify-between text-sm text-gray-300">
         <span> 
           © 2026 Your Company. All rights reserved.
         </span>
 
-        <div className="flex flex-col lg:gap-2 mt-2  gap-4">
-          <span>
+        <div className="flex lg:flex-row flex-col lg:gap-4 gap-2  mt-2  ">
+          <span className="cursor-pointer">
+            <Link href={"/privacy-policy"} className="">
             Privacy Policy
+            </Link>
           </span>
-          <span>
+          <span className="cursor-pointer">
             Term Of Service
           </span>
         </div>
