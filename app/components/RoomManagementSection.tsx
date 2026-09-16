@@ -31,7 +31,7 @@ const cards = [
 
 export default function RoomManagementSection() {
   return (
-    <section className="bg-white px-4 md:px-10 py-16 sm:py-20">
+<section className="bg-white px-4 sm:px-6 md:px-10 py-16 sm:py-20">  
       <div className="max-w-7xl mx-auto">
         {/* Room & Rate Management - text only, no image */}
         <div className="flex flex-col gap-4 mb-12">
