@@ -34,7 +34,7 @@ Built for Hospitality Business
         <CardOne />
         <CardTwo />
       </div>
-
+      
     </div>
   )
 }

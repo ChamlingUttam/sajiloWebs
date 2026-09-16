@@ -70,12 +70,12 @@ export default function Footer() {
 
               <ul className="flex flex-col gap-3 text-sm text-gray-200">
                 <li>
-                  <Link href="/feature" className="hover:text-white">
+                  <Link href="/" className="hover:text-white">
                     Features
                   </Link>
                 </li>
                 <li>
-                  <Link href="pricing" className="hover:text-white">
+                  <Link href="/pricing" className="hover:text-white">
                     Pricing
                   </Link>
                 </li>
@@ -153,7 +153,9 @@ export default function Footer() {
             </Link>
           </span>
           <span className="cursor-pointer">
+            <Link href={"/Terms-condition"}>
             Term Of Service
+            </Link>
           </span>
         </div>
         </div>
