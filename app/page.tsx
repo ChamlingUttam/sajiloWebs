@@ -14,7 +14,10 @@ export default function page() {
       <Hero />
       <HeroWithDashboard />
 
-      <Feature />
+      <section id="features" className="scroll-mt-20">
+        <Feature />
+      </section>
+
       <RoomCard />
       <RoomManagementSection />
       <DashboardFeaturesSection />

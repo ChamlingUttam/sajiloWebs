@@ -1,90 +1,96 @@
-
-import { BedDouble, CalendarCheck, type  LucideIcon, User } from 'lucide-react'
+import { Pencil, XCircle, Settings, ShieldCheck, HandCoins, Headset, type LucideIcon } from 'lucide-react'
 import React from 'react'
 import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card'
 
 type Reason = {
-    id:string | number
-    title:string
-    description:string
-    icon:LucideIcon
-    
+  id: string | number
+  title: string
+  description: string
+  icon: LucideIcon
 }
 
-const reasons:Reason[] = [
-    {
+const reasons: Reason[] = [
+  {
     id: 1,
-    icon: BedDouble,
-    title: "Room & Rate Management",
+    icon: Pencil,
+    title: "Basic SEO setup",
     description:
-      "Manage room types, seasonal rates, and packages effortlessly. Dynamic pricing tools maximize revenue.",
+      "Get started with complete pricing transparency, with no surprise charges or upfront setup fees.",
   },
   {
     id: 2,
-    icon: CalendarCheck,
-    title: "Booking Management",
+    icon: XCircle,
+    title: "Cancel Anytime",
     description:
-      "Manage reservations, availability, and guest bookings from one simple and powerful platform.",
+      "Stay in control with the freedom to cancel your subscription whenever you choose.",
   },
   {
     id: 3,
-    icon: User,
-    title: "Guest Management",
+    icon: Settings,
+    title: "Regular Feature Updates",
     description:
-      "Keep guest information organized and provide a smooth experience from booking to checkout.",
+      "Enjoy continuous improvements, new features, and updates designed to enhance your experience.",
+  },
+  {
+    id: 4,
+    icon: ShieldCheck,
+    title: "Secure Data Handling",
+    description:
+      "Your data is protected with secure systems and responsible data-handling practices.",
+  },
+  {
+    id: 5,
+    icon: HandCoins,
+    title: "Money-Back Guarantee",
+    description:
+      "Try with confidence and get your money back if the service doesn't meet your expectations.",
+  },
+  {
+    id: 6,
+    icon: Headset,
+    title: "24/7 Customer Support",
+    description:
+      "Get reliable assistance anytime with dedicated support whenever you need help.",
   },
 ]
+
 const PricingDownSection = () => {
   return (
-  <section className='bg-white w-full py-10'>
-  <header className='full flex-col  text-center justify-center px-12'>
-    <span><h1 className='text-[#491A53] lg:text-5xl text-xl font-bold'>Why Choose Us?</h1></span>
-    <span><p className='text-[#491A53] '>We're committed to providing the best value for your investment.</p></span>
-  </header>
+    <section className="bg-white w-full py-10">
+      <header className="flex flex-col text-center justify-center px-4 sm:px-12">
+        <h2 className="text-[#491A53] text-2xl sm:text-3xl lg:text-4xl font-bold">
+          Why Choose Us?
+        </h2>
+        <p className="text-[#491A53]/70 text-sm mt-1">
+          We&apos;re committed to providing the best value for your investment.
+        </p>
+      </header>
 
-
-
-   <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 px-12">
+      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-12">
         {reasons.map((reason) => {
           const Icon = reason.icon;
 
           return (
-            <Card
-              key={reason.id}
-              className="w-full border-0 shadow-sm"
-            >
+            <Card key={reason.id} className="w-full border border-[#e4dfe5] shadow-sm">
               <CardHeader>
-
-                {/* Icon part*/}
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#491A53] text-white">
                   <Icon className="h-5 w-5" />
                 </div>
 
-                
                 <CardTitle className="text-lg text-[#491A53]">
                   {reason.title}
                 </CardTitle>
 
-                
-                <CardDescription className="leading-6 text-sm text-[#491A53]">
+                <CardDescription className="leading-6 text-sm text-[#491A53]/70">
                   {reason.description}
                 </CardDescription>
-
               </CardHeader>
             </Card>
           );
         })}
       </div>
-
-  </section>
+    </section>
   )
 }
 
 export default PricingDownSection
-
-
-
-
-
-
-
