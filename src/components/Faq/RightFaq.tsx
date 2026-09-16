@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import { apis } from './api'
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { Button } from '@base-ui/react'
 
 const RightFaq = () => {
@@ -17,7 +17,7 @@ const RightFaq = () => {
     <section className="space-y-8 px-10 ">
         <p className='text-md'>Everything you need to create, manage, and grow your hotel’s <br /> online presence- all in one platform.</p>
 
-        {apis?.map((api)=>(
+        {apis?.map((api)=>( 
             <div key={api?.id} className='flex justify-between'>
                 <div>
                      <h2 className="text-xl font-semibold">
