@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
-import { LayoutGrid } from "lucide-react";
+import { Card } from "../ui/card";
+
 
 export function RoomCard() {
   return (
@@ -12,13 +12,7 @@ export function RoomCard() {
       height={650}
       className="w-full object-cover h-auto"
       />
-      <CardHeader>
-        <span className="flex items-center justify-center h-10 w-10 rounded-full bg-[#491A53] text-white "><LayoutGrid/></span>
-        <CardTitle>  <h1 className="font-semibold lg:text-lg text-md  text-[#491A53]">Room & Rate Management</h1></CardTitle>
-        <CardDescription>
-          <p className="text-sm lg:text-md text-[#491A53]">Manage room types, seasonal rates, and packages effortlessly. Dynamic pricing tools maximize revenue.</p>
-        </CardDescription>
-      </CardHeader>
+    
     
     </Card>
   )
