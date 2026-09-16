@@ -13,7 +13,7 @@ const features = [
 export default function DashboardFeaturesSection() {
   return (
     <section className="w-full overflow-hidden bg-white px-4 md:px-10 py-10 sm:py-14">
-<div className="max-w-7xl mx-auto text-center px-2">
+<div className="max-w-[1360px] mx-auto text-center px-2">
   <span className="inline-block bg-[#3B1547] text-white text-xs font-medium px-3 py-2 rounded-sm mb-4">
     Dashboard
   </span>

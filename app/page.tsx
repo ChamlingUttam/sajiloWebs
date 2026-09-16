@@ -6,7 +6,6 @@ import TemplatesSection from "./components/TemplatesSection";
 import RoomManagementSection from "./components/RoomManagementSection";
 import BookDemoSection from "../src/components/common/BookDemoSection";
 import Feature from "@/src/components/features/Feature";
-import { RoomCard } from "@/src/components/room/RoomCard";
 
 export default function page() {
   return (
@@ -18,7 +17,7 @@ export default function page() {
         <Feature />
       </section>
 
-      <RoomCard />
+      
       <RoomManagementSection />
       <DashboardFeaturesSection />
       <TemplatesSection />

@@ -2,6 +2,7 @@ import React from 'react'
 import { CardOne } from './CardOne'
 import { CardTwo } from './CardTwo'
 import { Button } from '../ui/button'
+import { RoomCard } from '../room/RoomCard'
 
 const Feature = () => {
   return (
@@ -35,7 +36,7 @@ const Feature = () => {
           <CardOne />
           <CardTwo />
         </div>
-
+      <RoomCard />
       </div>
     </div>
   )

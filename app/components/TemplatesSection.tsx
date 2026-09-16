@@ -7,7 +7,7 @@ const templates = Array.from({ length: 7 }, () => ({
 export default function TemplatesSection() {
   return (
     <section className="bg-[#3B1547] px-4 md:px-10 py-16 sm:py-20">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 text-left">

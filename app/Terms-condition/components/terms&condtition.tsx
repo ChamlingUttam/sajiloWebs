@@ -1,7 +1,7 @@
 export default function TermsOfUse() {
   return (
-    <main className="w-full px-4 md:px-10 py-6 md:py-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+<main className="w-full px-4 sm:px-6 md:px-10 py-6 md:py-8 bg-white">
+        <div className="max-w-7xl mx-auto">
         <div className="max-w-7xl">
           <h1 className="text-xl sm:text-2xl font-bold text-[#3E1647] mb-4">
             Terms of Use
