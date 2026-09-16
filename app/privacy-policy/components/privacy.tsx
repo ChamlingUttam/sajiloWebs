@@ -139,7 +139,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-[#3E1647] mb-2">
+            <h2 className="text-lg font-semibold text-[#491A53] mb-2">
               9. Changes To This Privacy Policy
             </h2>
             <p>
@@ -150,17 +150,27 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-[#3E1647] mb-2">
+            <h2 className="text-lg font-semibold text-[#491A53] mb-2">
               10. Contact Us
             </h2>
             <p className="mb-2">
               If you have any questions about this Privacy Policy, please
               contact us:
             </p>
-            <ul className="flex flex-col gap-1">
-              <li>Email: hello@sajilowebs.com</li>
-              <li>Phone: +977 XXXXXXXXXX</li>
-              <li>Address: Pergoli Chowk, Sohari, Nepal</li>
+             <ul className="flex flex-col gap-1">
+              <li>
+                Email:{" "}
+                <a href="mailto:hamroyouthit@gmail.com" className="text-[#491A53] ">
+                  hamroyouthit@gmail.com
+                </a>
+              </li>
+              <li>
+                Phone:{" "}
+                <a href="tel:+9779746888890" className="text-[#491A53] ">
+                  +977 9746888890
+                </a>
+              </li>
+              <li>Address: Pargati Chowk, Itahari, Nepal</li>
             </ul>
           </section>
         </div>
