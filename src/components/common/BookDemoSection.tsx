@@ -9,20 +9,13 @@ const BookDemoSection = () => {
         className="
           relative
           w-full
-          min-h-200
-          sm:min-h-220
-          md:min-h-230
-          lg:min-h-[850px]
-          rounded-xl
+          rounded-xl sm:rounded-3xl
+          bg-[#491A53]
           p-6
           sm:p-8
-          bg-[#491A53]
           md:p-10
           overflow-hidden
-          bg-cover
-          bg-center
         "
-      
       >
         {/* Header */}
         <div className="relative z-20 max-w-2xl mx-auto text-center">
@@ -146,38 +139,29 @@ const BookDemoSection = () => {
           </div>
         </div>
 
-        {/* Dashboard Image */}
-  {/* Dashboard Image */}
-<div
-  style={{
-          backgroundImage: "url('/assets/homepage/purple-bg.jpg')",
-        }}
-  className="
-    absolute
-    z-10
-    lg:bottom-0
-    lg:left-1/2
-    lg:-translate-x-1/2
-
-    w-[125%]
-    sm:w-[110%]
-    md:w-[90%]
-    lg:w-[60%]
-    xl:w-[55%]
-
-    translate-y-[30%]
-    lg:translate-y-[25%]
-    xl:translate-y-[20%]
-  "
->
-          <Image
-            src="/assets/homepage/dashboard.png"
-            alt="dashboard"
-            width={2280}
-            height={1400}
-            className="w-full h-auto"
-            priority
-          />
+        {/* Dashboard Image, framed with bg pattern */}
+        <div className="relative z-10 mt-3 sm:mt-4 md:mt-0 flex justify-center">
+          <div
+            className="
+              w-[92%] sm:w-[92%] md:w-[85%] lg:w-[75%]
+              rounded-2xl
+              bg-cover bg-center bg-no-repeat
+              p-2 sm:p-3
+              translate-y-[30%]
+            "
+            style={{ backgroundImage: "url('/assets/homepage/purple-bg.jpg')" }}
+          >
+            <div className="w-full rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/10">
+              <Image
+                src="/assets/homepage/dashboard.png"
+                alt="dashboard"
+                width={2280}
+                height={1400}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
