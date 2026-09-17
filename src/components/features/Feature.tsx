@@ -10,7 +10,7 @@ const Feature = () => {
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
-        <header className="flex w-full flex-col gap-8 px-4 py-10 sm:px-6 md:px-10 lg:flex-row lg:items-end lg:justify-between lg:py-16">
+        <header className="flex w-full flex-col gap-8 px-4 py-10 sm:px-6 md:px-10 lg:flex-row lg:items-center lg:justify-between lg:py-16">
 
           {/* Left */}
           <div className="flex flex-col gap-4">
