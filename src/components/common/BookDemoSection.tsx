@@ -13,21 +13,20 @@ const BookDemoSection = () => {
           min-h-200
           sm:min-h-220
           md:min-h-230
-          lg:min-h-190
+          lg:min-h-[850px]
           rounded-xl
           p-6
           sm:p-8
+          bg-[#491A53]
           md:p-10
           overflow-hidden
           bg-cover
           bg-center
         "
-        style={{
-          backgroundImage: "url('/assets/homepage/purple-bg.jpg')",
-        }}
+      
       >
         {/* Header */}
-        <div className="relative z-10 max-w-2xl mx-auto text-center">
+        <div className="relative z-20 max-w-2xl mx-auto text-center">
           <h2
             className="
               text-white
@@ -149,21 +148,29 @@ const BookDemoSection = () => {
         </div>
 
         {/* Dashboard Image */}
-        <div
-          className="
-            absolute
-            lg:bottom-0
-            lg:left-1/2
-            lg:-translate-x-1/2
-            
-            w-[125%]
-            sm:w-[110%]
-            md:w-[90%]
-            lg:w-[72%]
+  {/* Dashboard Image */}
+<div
+  style={{
+          backgroundImage: "url('/assets/homepage/purple-bg.jpg')",
+        }}
+  className="
+    absolute
+    z-10
+    lg:bottom-0
+    lg:left-1/2
+    lg:-translate-x-1/2
 
-            translate-y-[30%]
-          "
-        >
+    w-[125%]
+    sm:w-[110%]
+    md:w-[90%]
+    lg:w-[60%]
+    xl:w-[55%]
+
+    translate-y-[30%]
+    lg:translate-y-[25%]
+    xl:translate-y-[20%]
+  "
+>
           <Image
             src="/assets/homepage/dashboard.png"
             alt="dashboard"
@@ -179,4 +186,3 @@ const BookDemoSection = () => {
 };
 
 export default BookDemoSection;
-
