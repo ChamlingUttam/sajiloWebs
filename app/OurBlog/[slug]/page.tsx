@@ -52,8 +52,8 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen w-full px-4 py-6 sm:px-6 lg:px-8">
-      <Card className="mx-auto flex w-full max-w-5xl flex-col items-center overflow-hidden py-0">
+    <div className="min-h-screen bg-white  w-full px-4 py-6 sm:px-6 lg:px-8">
+      <Card className="mx-auto flex border-[#491A53] border w-full max-w-5xl flex-col items-center overflow-hidden py-0">
 
         {/* Image */}
         {blogsDataId?.image && (
