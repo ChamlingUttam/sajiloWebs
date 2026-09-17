@@ -1,5 +1,5 @@
+import { BlogGrid } from "./components/BlogGrid";
 import BlogHeader from "./components/BlogHeader";
-import BlogGrid from "./components/BlogGrid";
 
 export default function BlogSection() {
   return (

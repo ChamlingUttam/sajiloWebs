@@ -1,4 +1,3 @@
-
 import { Gem } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -10,24 +9,16 @@ const BookDemoSection = () => {
         className="
           relative
           w-full
-          min-h-200
-          sm:min-h-220
-          md:min-h-230
-          lg:min-h-190
-          rounded-xl
+          rounded-xl sm:rounded-3xl
+          bg-[#491A53]
           p-6
           sm:p-8
           md:p-10
           overflow-hidden
-          bg-cover
-          bg-center
         "
-        style={{
-          backgroundImage: "url('/assets/homepage/purple-bg.jpg')",
-        }}
       >
         {/* Header */}
-        <div className="relative z-10 max-w-2xl mx-auto text-center">
+        <div className="relative z-20 max-w-2xl mx-auto text-center">
           <h2
             className="
               text-white
@@ -148,30 +139,29 @@ const BookDemoSection = () => {
           </div>
         </div>
 
-        {/* Dashboard Image */}
-        <div
-          className="
-            absolute
-            lg:bottom-0
-            lg:left-1/2
-            lg:-translate-x-1/2
-            
-            w-[125%]
-            sm:w-[110%]
-            md:w-[90%]
-            lg:w-[72%]
-
-            translate-y-[30%]
-          "
-        >
-          <Image
-            src="/assets/homepage/dashboard.png"
-            alt="dashboard"
-            width={2280}
-            height={1400}
-            className="w-full h-auto"
-            priority
-          />
+        {/* Dashboard Image, framed with bg pattern */}
+        <div className="relative z-10 mt-3 sm:mt-4 md:mt-5 flex justify-center">
+          <div
+            className="
+              w-[96%] sm:w-[92%] md:w-[85%] lg:w-[75%]
+              rounded-2xl
+              bg-cover bg-center bg-no-repeat
+              p-2 sm:p-3
+              translate-y-[10%]
+            "
+            style={{ backgroundImage: "url('/assets/homepage/purple-bg.jpg')" }}
+          >
+            <div className="w-full rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/10">
+              <Image
+                src="/assets/homepage/dashboard.png"
+                alt="dashboard"
+                width={2280}
+                height={1400}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -179,4 +169,3 @@ const BookDemoSection = () => {
 };
 
 export default BookDemoSection;
-

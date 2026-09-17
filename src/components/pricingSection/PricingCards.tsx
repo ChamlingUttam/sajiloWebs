@@ -1,79 +1,89 @@
+"use client"
 import { Check } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
+import { usePrice } from "@/src/hooks/price";
+import { useEffect } from "react";
 
-const pricingPlans = [
-  {
-    id: 1,
-    name: "Basic",
-    description: "Suitable for small hotels, guest houses & homestays",
-    price: 15000,
-    popular: false,
-    features: [
-      "Hotel website on yourhotel.sajilows.com",
-      "Free website setup, Mobile-friendly design",
-      "Photo gallery (up to 40 images)",
-      "Contact & inquiry form",
-      "Google Maps integration",
-      "Rooms listing with categories",
-      "Booking from website",
-      "Free hosting for 1 year",
-      "Basic SEO setup",
-      "Admin Dashboard",
-    ],
-  },
-  {
-    id: 2,
-    name: "Standard",
-    description: "Suitable for boutique hotels and resorts",
-    price: 25000,
-    popular: true,
-    features: [
-      "Everything in Basic",
-      "Custom domain (.com/.np) for 1 year",
-      "Room showcase & details",
-      "Online booking request form",
-      "Advanced SEO setup",
-      "Gallery images upto (150 images)",
-      "Income and expense tracking",
-      "Multiple Themes Option",
-      "Early access to new features",
-      "24 hrs support",
-    ],
-  },
-  {
-    id: 3,
-    name: "Premium",
-    description: "Suitable for hotels, resorts & luxury properties",
-    price: 35000,
-    popular: false,
-    features: [
-      "Everything in Standard",
-      "Hosted on own domain",
-      "Custom Design",
-      "Unlimited room listings",
-      "Special offers & promotions section",
-      "Blog/News management",
-      "Premium design customization",
-      "Priority support",
-    ],
-  },
-];
+// const pricinglans = [
+//   {
+//     id: 1,
+//     name: "Basic",
+//     description: "Suitable for small hotels, guest houses & homestays",
+//     price: 15000,
+//     popular: false,
+//     features: [
+//       "Hotel website on yourhotel.sajilows.com",
+//       "Free website setup, Mobile-friendly design",
+//       "Photo gallery (up to 40 images)",
+//       "Contact & inquiry form",
+//       "Google Maps integration",
+//       "Rooms listing with categories",
+//       "Booking from website",
+//       "Free hosting for 1 year",
+//       "Basic SEO setup",
+//       "Admin Dashboard",
+//     ],
+//   },
+//   {
+//     id: 2,
+//     name: "Standard",
+//     description: "Suitable for boutique hotels and resorts",
+//     price: 25000,
+//     popular: true,
+//     features: [
+//       "Everything in Basic",
+//       "Custom domain (.com/.np) for 1 year",
+//       "Room showcase & details",
+//       "Online booking request form",
+//       "Advanced SEO setup",
+//       "Gallery images upto (150 images)",
+//       "Income and expense tracking",
+//       "Multiple Themes Option",
+//       "Early access to new features",
+//       "24 hrs support",
+//     ],
+//   },
+//   {
+//     id: 3,
+//     name: "Premium",
+//     description: "Suitable for hotels, resorts & luxury properties",
+//     price: 35000,
+//     popular: false,
+//     features: [
+//       "Everything in Standard",
+//       "Hosted on own domain",
+//       "Custom Design",
+//       "Unlimited room listings",
+//       "Special offers & promotions section",
+//       "Blog/News management",
+//       "Premium design customization",
+//       "Priority support",
+//     ],
+//   },
+// ];
 
 const PricingCard = () => {
+
+  const {data:priceData} = usePrice()
+
+  useEffect(()=>{
+  console.log("price:",priceData)
+  },[priceData])
+
   return (
     <section className="px-4 sm:px-6 lg:px-15 py-12 bg-white">
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3 items-stretch">
-        {pricingPlans.map((plan) => (
+        {priceData?.map((price) => (
           <Card
-            key={plan.id}
+            key={price.subscription}
             className={`relative flex h-full flex-col rounded-2xl border overflow-hidden ${
-              plan.popular
+              price.popular
                 ? "border-[#3E1647] bg-[#3E1647] text-white"
                 : "border-[#e4dfe5] bg-white text-[#491A53]"
             }`}
           >
-            {plan.popular && (
+            {price.popular && (
               <div className="bg-[#3E1647] border-b border-white/10 text-center text-[11px] font-medium py-2">
                 Most Popular
               </div>
@@ -81,44 +91,47 @@ const PricingCard = () => {
 
             <CardHeader className="pb-1 pt-5">
               <CardTitle
-                className={`text-base font-semibold ${plan.popular ? "text-white" : "text-[#491A53]"}`}
+                className={`text-xl font-semibold ${price.popular ? "text-white" : "text-[#491A53]"}`}
               >
-                {plan.name}
+                {price.subscription}
               </CardTitle>
               <CardDescription
-                className={`text-xs ${plan.popular ? "text-white/75" : "text-[#491A53]/70"}`}
+                className={`text-xs ${price.popular ? "text-white/75" : "text-[#491A53]/70"}`}
               >
-                {plan.description}
+                {price.short_description}
               </CardDescription>
             </CardHeader>
 
             <CardContent className="flex-1">
               <div className="flex items-end">
-                <span className={`text-2xl font-bold ${plan.popular ? "text-white" : "text-[#491A53]"}`}>
-                  Rs. {plan.price.toLocaleString()}
+                <span className={`text-2xl font-bold ${price.popular ? "text-white" : "text-[#491A53]"}`}>
+                  Rs. {price.amount.toLocaleString()}
                 </span>
-                <span className={`mb-0.5 ml-1 text-xs ${plan.popular ? "text-white/75" : "text-[#491A53]/70"}`}>
+                <span className={`mb-0.5 ml-1 text-xl ${price.popular ? "text-white/75" : "text-[#491A53]/70"}`}>
                   /month
                 </span>
               </div>
 
+             
+
               <ul className="mt-3 space-y-2">
-                {plan.features.map((feature, index) => (
-                  <li
-                    key={index}
-                    className={`flex items-start gap-2 text-xs ${plan.popular ? "text-white/90" : "text-[#491A53]"}`}
-                  >
-                    <Check size={12} className="mt-0.5 shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
+                 {price.description.split("\n").map((item, index) => (
+        <li key={index}>
+          <div className="flex gap-2 items-center">
+            <span><Check size={20}/></span>
+
+          <span>{item}</span>
+          </div>
+          </li>
+      ))}
+
               </ul>
             </CardContent>
 
            <CardFooter className="pb-5 pt-2 bg-transparent">
   <Button
     className={`h-8 w-full text-xs font-medium ${
-      plan.popular
+      price.popular
         ? "bg-[#FF751F] text-white hover:bg-[#e15e0d]"
         : "bg-white border border-[#491A53]/30 text-[#491A53] hover:bg-[#491A53]/5"
     }`}
@@ -134,3 +147,5 @@ const PricingCard = () => {
 };
 
 export default PricingCard;
+
+

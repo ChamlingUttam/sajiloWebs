@@ -4,12 +4,14 @@ export const contactSchema = z.object({
   firstName: z
     .string()
     .min(1, "First name is required")
-    .max(50, "First name must be under 50 characters"),
+    .max(50, "First name must be under 50 characters")
+    .regex(/^[A-Za-z\s]+$/, "First name must not contain numbers"),
 
   lastName: z
     .string()
     .min(1, "Last name is required")
-    .max(50, "Last name must be under 50 characters"),
+    .max(50, "Last name must be under 50 characters")
+    .regex(/^[A-Za-z\s]+$/, "Last name must not contain numbers"),
 
   phone: z
     .string()
