@@ -65,7 +65,7 @@ export default function Navbar() {
             >
               Get Started
             </Button>
-          </Link>
+          {/* </Link> */}
         </div>
 
         <button
