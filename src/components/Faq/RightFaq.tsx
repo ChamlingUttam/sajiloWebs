@@ -41,4 +41,3 @@ const RightFaq = () => {
 }
 
 export default RightFaq
-
