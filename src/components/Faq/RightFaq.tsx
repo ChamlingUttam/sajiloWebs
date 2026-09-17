@@ -26,7 +26,7 @@ const RightFaq = () => {
     <section className="space-y-8 px-10 ">
         <p className='text-md'>Everything you need to create, manage, and grow your hotel’s <br /> online presence- all in one platform.</p>
 
-        {faqdata?.map((faq:Faq)=>( 
+        {faqdata?.map((faq: Faq)=>( 
             <div key={faq?.id} className='flex justify-between'>
                 <div>
                      <h2 className="text-xl font-semibold">

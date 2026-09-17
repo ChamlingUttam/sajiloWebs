@@ -69,7 +69,7 @@ const PricingCard = () => {
              
 
               <ul className="mt-3 space-y-2">
-                 {price.description.split("\n").map((item, index) => (
+                 {price.description.split("\n").map((item:string, index:number) => (
         <li key={index}>
           <div className="flex gap-2 items-center">
             <span><Check size={20}/></span>
