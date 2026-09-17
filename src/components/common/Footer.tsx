@@ -48,7 +48,7 @@ export default function Footer() {
             <div>
               <h3 className="text-base font-semibold mb-4">Product</h3>
               <ul className="flex flex-col gap-3 text-sm text-gray-200">
-                <li><Link href="/feature" className="hover:text-white">Features</Link></li>
+                <li><Link href="/#features" className="hover:text-white">Features</Link></li>
                 <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
                 <li><a href="#" className="hover:text-white">Templates</a></li>
               </ul>
@@ -59,7 +59,7 @@ export default function Footer() {
               <ul className="flex flex-col gap-3 text-sm text-gray-200">
                 <li><Link href="/faqs" className="hover:text-white">FAQ</Link></li>
                 <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-                <li><Link href="/blogs" className="hover:text-white">Blog</Link></li>
+                <li><Link href="/OurBlog" className="hover:text-white">Blog</Link></li>
               </ul>
             </div>
 
@@ -87,7 +87,7 @@ export default function Footer() {
           <span>© 2026 Your Company. All rights reserved.</span>
           <div className="flex gap-4">
             <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
-            <span className="cursor-pointer hover:text-white">Term of Service</span>
+            <Link href={"/Terms-condition"} className="cursor-pointer hover:text-white">Term of Service</Link>
           </div>
         </div>
 

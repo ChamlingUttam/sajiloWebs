@@ -40,16 +40,16 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link href="/login">
+          {/* <Link href="/login"> */}
             <Button variant="secondary" size="sm" className="transition-transform hover:scale-[1.03]">
               Login
             </Button>
-          </Link>
-          <Link href="/get-started">
+          {/* </Link> */}
+          {/* <Link href="/get-started"> */}
             <Button size="sm" className="bg-[#FF751F] transition-transform hover:scale-[1.03] hover:bg-[#e15e0d]">
               Get Started
             </Button>
-          </Link>
+          {/* </Link> */}
         </div>
 
         <button
@@ -81,12 +81,12 @@ export default function Navbar() {
           <div className="mx-4 my-4 border-t border-white/10" />
 
           <div className="flex flex-col gap-2.5 px-4 pb-5">
-            <Link href="/login" onClick={() => setOpen(false)}>
+            {/* <Link href="/login" onClick={() => setOpen(false)}> */}
               <Button variant="secondary" className="w-full">Login</Button>
-            </Link>
-            <Link href="/get-started" onClick={() => setOpen(false)}>
+            {/* </Link> */}
+            {/* <Link href="/get-started" onClick={() => setOpen(false)}> */}
               <Button className="w-full bg-[#FF751F] hover:bg-[#e15e0d]">Get Started</Button>
-            </Link>
+            {/* </Link> */}
           </div>
         </div>
       )}
