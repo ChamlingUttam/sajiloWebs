@@ -5,6 +5,6 @@ export const getFaq = async()=>{
 
     const res = await api.get(`${API_ENDPOINTS.PUBLIC.FAQ}`)
 
-    return res.data.data.data
+    return res.data.data
 
 }

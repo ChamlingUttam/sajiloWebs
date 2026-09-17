@@ -161,14 +161,16 @@ const BookDemoSection = () => {
             md:w-[90%]
             lg:w-[72%]
 
-            translate-y-[30%]
+             md:translate-y-[30%]
+            lg:translate-y-[35%]
+            xl:translate-y-[10%]
           "
         >
           <Image
             src="/assets/homepage/dashboard.png"
             alt="dashboard"
             width={2280}
-            height={1400}
+            height={1300}
             className="w-full h-auto"
             priority
           />
@@ -179,4 +181,27 @@ const BookDemoSection = () => {
 };
 
 export default BookDemoSection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
