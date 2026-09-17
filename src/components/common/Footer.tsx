@@ -1,8 +1,20 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
+import { getContactInfo, ContactInfo } from "@/Services/api/contact-info";
 
 export default function Footer() {
+  const [contact, setContact] = useState<ContactInfo | null>(null);
+
+  useEffect(() => {
+    getContactInfo()
+      .then((data) => setContact(data[0] ?? null))
+      .catch(() => setContact(null));
+  }, []);
+
   return (
     <footer className="w-full bg-[#3E1647] text-white px-4 py-10 sm:px-6 md:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto">
@@ -54,9 +66,17 @@ export default function Footer() {
             <div className="col-span-2 sm:col-span-1">
               <h3 className="text-base font-semibold mb-4">Contact Us</h3>
               <ul className="flex flex-col gap-3 text-sm text-gray-200">
-                <li><a href="mailto:hello@example.com" className="hover:text-white break-all">hello@example.com</a></li>
-                <li><a href="tel:+9779800000000" className="hover:text-white">+977 9800000000</a></li>
-                <li>Kathmandu, Nepal</li>
+                <li>
+                  <a href={`mailto:${contact?.email ?? "hello@example.com"}`} className="hover:text-white break-all">
+                    {contact?.email ?? "hello@example.com"}
+                  </a>
+                </li>
+                <li>
+                  <a href={`tel:${contact?.phone ?? "+9779800000000"}`} className="hover:text-white">
+                    {contact?.phone ?? "+977 9800000000"}
+                  </a>
+                </li>
+                <li>{contact?.address ?? "Kathmandu, Nepal"}</li>
               </ul>
             </div>
 
