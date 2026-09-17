@@ -5,6 +5,11 @@ import { ChevronDown } from 'lucide-react'
 import { Button } from '@base-ui/react'
 import { useFaq } from '@/src/hooks/faq'
 
+type Faq = {
+  id: number;
+  question: string;
+  answer: string;
+};
 const RightFaq = () => {
     const [open,setOpen] = useState<number|null>(null)
 
@@ -21,7 +26,7 @@ const RightFaq = () => {
     <section className="space-y-8 px-10 ">
         <p className='text-md'>Everything you need to create, manage, and grow your hotel’s <br /> online presence- all in one platform.</p>
 
-        {faqdata?.map((faq)=>( 
+        {faqdata?.map((faq:Faq)=>( 
             <div key={faq?.id} className='flex justify-between'>
                 <div>
                      <h2 className="text-xl font-semibold">
