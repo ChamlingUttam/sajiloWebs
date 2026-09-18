@@ -58,7 +58,7 @@ export default function Navbar() {
               Login
             </Button>
           </a>
-          <a  href="https://app.sajilows.com/login?email=hotel%40gmail.com&password=12345678">
+          <a  href="https://app.sajilows.com/login?email=hotel@gmail.com&password=12345678">
             <Button
               size="sm"
               className="bg-[#FF751F] transition-transform hover:scale-[1.03] hover:bg-[#e15e0d]"
