@@ -49,7 +49,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link href="/login">
+          {/* <Link href="/login"> */}
             <Button
               variant="secondary"
               size="sm"
@@ -57,8 +57,8 @@ export default function Navbar() {
             >
               Login
             </Button>
-          </Link>
-          <Link href="/get-started">
+          {/* </Link> */}
+          {/* <Link href="/get-started"> */}
             <Button
               size="sm"
               className="bg-[#FF751F] transition-transform hover:scale-[1.03] hover:bg-[#e15e0d]"
@@ -131,19 +131,19 @@ export default function Navbar() {
         <div className="flex-1" />
 
         <div className="border-t border-gray-100 p-5 flex flex-col gap-2.5">
-          <Link href="/login" onClick={() => setOpen(false)}>
+          {/* <Link href="/login" onClick={() => setOpen(false)}> */}
             <Button
               variant="outline"
               className="w-full border-[#3E1647]/20 py-6 text-base text-[#3E1647] hover:bg-gray-50"
             >
               Login
             </Button>
-          </Link>
-          <Link href="/get-started" onClick={() => setOpen(false)}>
+          {/* </Link> */}
+          {/* <Link href="/get-started" onClick={() => setOpen(false)}> */}
             <Button className="w-full bg-[#3E1647] py-6 text-base hover:bg-[#4d1c59]">
               Get Started →
             </Button>
-          </Link>
+          {/* </Link> */}
         </div>
       </div>
     </nav>
