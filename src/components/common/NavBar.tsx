@@ -17,8 +17,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#3E1647] text-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 md:px-10">
+    <nav className="sticky top-0 z-50 w-full  bg-[#3E1647] text-white">
+      <div className="mx-auto w-full flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 md:px-10">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2.5"
@@ -40,7 +40,7 @@ export default function Navbar() {
               <Link
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-gray-300 transition-colors hover:text-white"
+                className="text-gray-300 transition-colors text-xl hover:text-white"
               >
                 {item.name}
               </Link>
