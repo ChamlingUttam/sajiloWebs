@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { PenLine, ListChecks, Languages, Users, LineChart } from "lucide-react";
-import Link from "next/link";
 
 const features = [
   { image: "/assets/homepage/bed-single.png", text: "Manage rooms, rates, photos, and content" },
@@ -13,7 +12,7 @@ const features = [
 
 export default function DashboardFeaturesSection() {
   return (
-    <section className="w-full overflow-hidden bg-white px-4 md:px-35 py-10 sm:py-14">
+    <section className="w-full overflow-hidden bg-white px-4 md:px-10 py-10 sm:py-14">
 <div className="max-w-[1360px] mx-auto text-center px-2">
   <span className="inline-block bg-[#3B1547] text-white text-xs font-medium px-3 py-2 rounded-sm mb-4">
     Dashboard
@@ -29,11 +28,9 @@ export default function DashboardFeaturesSection() {
     <button className="bg-[#FF751F] hover:bg-orange-600 border border-[#CC5E19] text-white text-xs sm:text-sm font-medium px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg whitespace-nowrap">
       Start 14-Days Free Trial
     </button>
-    {/* <Link href={"/schedule-demo"} > */}
-    <Link   href={"/schedule-demo"}  className="bg-[#EDE8EE] cursor-pointer border border-[#EDE8EE] text-[#160818] text-xs sm:text-sm font-medium px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg whitespace-nowrap hover:bg-gray-50">
+    <button className="bg-[#EDE8EE] border border-[#EDE8EE] text-[#160818] text-xs sm:text-sm font-medium px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg whitespace-nowrap hover:bg-gray-50">
       Book a Demo
-    </Link>
-    {/* </Link> */}
+    </button>
   </div>
 
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-10 md:gap-12 items-center mt-14 text-left">

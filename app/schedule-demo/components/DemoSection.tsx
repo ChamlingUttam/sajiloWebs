@@ -17,7 +17,7 @@ export default function DemoSection() {
       </div>
 
       {/* Content - light/white bg, form card purple */}
-      <div className="bg-[#F3F1F7] px-4 md:px-10 py-16 sm:py-20">
+      <div className="bg-[#F3F1F7] px-4 md:px-40 py-16 sm:py-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-6 items-start">
           <DemoForm />
           <DemoBenefits />

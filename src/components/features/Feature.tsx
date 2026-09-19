@@ -5,6 +5,7 @@ import { FeatureCard } from "./FeatureCard";
 import { Button } from "../ui/button";
 import { RoomCard } from "../room/RoomCard";
 import { getFeatures, Feature as FeatureType } from "@/Services/api/features";
+import MainCard from "./MainCard";
 
 const Feature = () => {
   const [features, setFeatures] = useState<FeatureType[]>([]);
@@ -20,14 +21,14 @@ const Feature = () => {
 
   return (
     <div id="features" className="w-full bg-white">
-      <div className="mx-auto max-w-7xl">
+      <div className="">
 
-        <header className="flex w-full flex-col gap-8 px-4 py-10 sm:px-6 md:px-10 lg:flex-row lg:items-end lg:justify-between lg:py-16">
+        <header className="flex w-full flex-col gap-2 px-4 py-10 sm:px-6 md:px-40 lg:flex-row lg:justify-between lg:py-10">
           <div className="flex flex-col gap-4">
             <Button className="w-fit bg-[#491A53] text-white">
               Our Features
             </Button>
-            <h1 className="text-3xl text-[#491A53] font-semibold leading-tight tracking-tight lg:text-5xl">
+            <h1 className="text-xl  text-[#491A53] font-semibold leading-tight tracking-tight lg:text-5xl">
               Powerful Features <br />
               Built for Hospitality Business
             </h1>
@@ -52,7 +53,7 @@ const Feature = () => {
               />
             ))}
         </div>
-
+        <MainCard/>
         <RoomCard />
       </div>
     </div>

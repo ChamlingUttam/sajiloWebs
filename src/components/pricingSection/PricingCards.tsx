@@ -24,12 +24,12 @@ const PricingCard = () => {
   const { data: priceData } = usePrice();
 
   return (
-    <section className="px-4 sm:px-6 lg:px-15 py-12 bg-white">
+    <section className="px-4 sm:px-6 lg:px-40 py-12 bg-[#FCFAFC]">
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3 items-stretch">
         {priceData?.map((price: Price) => (
           <Card
             key={price.subscription}
-            className="relative flex h-full flex-col rounded-2xl border overflow-hidden"
+            className="relative flex h-full flex-col rounded-2xl border w  bg-[#FFFFFF] overflow-hidden"
           >
             <CardHeader className="pb-1 pt-5">
               <CardTitle className="text-xl font-semibold text-[#491A53]">
@@ -56,8 +56,8 @@ const PricingCard = () => {
                 {price.description
                   .split("\n")
                   .map((item: string, index: number) => (
-                    <li key={index}>
-                      <div className="flex gap-2 items-center">
+                    <li key={index} className="">
+                      <div className="flex gap-2  text-[#491A53] text-sm  ">
                         <span>
                           <Check size={20} />
                         </span>
@@ -69,7 +69,7 @@ const PricingCard = () => {
             </CardContent>
 
             <CardFooter className="pb-5 pt-2 bg-transparent">
-              <Button className="h-8 w-full text-xs font-medium">
+              <Button className="h-8 w-full text-xs bg-[#D3C8D6] text-[#160818] font-medium">
                 Get Started
               </Button>
             </CardFooter>
@@ -81,3 +81,8 @@ const PricingCard = () => {
 };
 
 export default PricingCard;
+
+
+
+
+

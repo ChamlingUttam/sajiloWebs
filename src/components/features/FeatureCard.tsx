@@ -17,8 +17,8 @@ export function FeatureCard({
   image: string;
 }) {
   return (
-    <Card className="relative mx-auto w-full overflow-hidden pt-0">
-      <div className="relative w-full">
+    <Card className="relative mx-auto w-full  overflow-hidden pt-0">
+      <div className="relative w-full ">
         <Image
           src={image}
           alt={title}

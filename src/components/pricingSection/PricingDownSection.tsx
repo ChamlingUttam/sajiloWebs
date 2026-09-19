@@ -56,7 +56,7 @@ const reasons: Reason[] = [
 
 const PricingDownSection = () => {
   return (
-    <section className="bg-white w-full py-10">
+    <section className="bg-white w-full py-10 lg:px-27 px-2">
       <header className="flex flex-col text-center justify-center px-4 sm:px-12">
         <h2 className="text-[#491A53] text-2xl sm:text-3xl lg:text-4xl font-bold">
           Why Choose Us?

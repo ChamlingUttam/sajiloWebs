@@ -12,13 +12,13 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Features", href: "/#features" },
     { name: "Price", href: "/pricing" },
-    { name: "Blog", href: "/OurBlog" },
+    { name: "Blog", href: "/our-blog" },
     { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#3E1647] text-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 md:px-10">
+    <nav className="sticky top-0 z-50 w-full  bg-[#3E1647] text-white">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 md:px-40">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2.5"
@@ -36,7 +36,7 @@ export default function Navbar() {
 
         <ul className="hidden items-center gap-6 text-sm font-medium md:flex lg:gap-8">
           {navItems.map((item) => (
-            <li key={item.name}>
+            <li key={item.name} className="text-xl text-[#EDE8EE]">
               <Link
                 href={item.href}
                 onClick={() => setOpen(false)}
@@ -53,7 +53,7 @@ export default function Navbar() {
             <Button
               variant="secondary"
               size="sm"
-              className="transition-transform hover:scale-[1.03]"
+              className="transition-transform hover:scale-[1.03] "
             >
               Login
             </Button>
@@ -61,7 +61,7 @@ export default function Navbar() {
           <a  href="https://app.sajilows.com/login?email=hotel%40gmail.com&password=12345678">
             <Button
               size="sm"
-              className="bg-[#FF751F] transition-transform hover:scale-[1.03] hover:bg-[#e15e0d]"
+              className="bg-[#FF751F] transition-transform text-[#EDE8EE] hover:scale-[1.03] hover:bg-[#e15e0d]"
             >
               Demo
             </Button>
