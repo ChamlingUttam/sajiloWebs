@@ -1,13 +1,10 @@
 
 import {
   Card,
-  // CardAction,
   CardDescription,
-  // CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
-// import { Button } from "../ui/button";
 import Image from "next/image";
 import { LayoutGrid, ListChecks } from "lucide-react";
 
