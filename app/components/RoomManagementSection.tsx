@@ -169,8 +169,8 @@ export default function RoomManagementSection() {
           </CardHeader>
 
           <CardContent className="p-0 pt-4">
-            <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#3B1547]">
-              <Icon size={25} className="text-white" />
+            <div className="mb-3 flex h-8 w-8 lg:h-10 lg:w-10  items-center justify-center rounded-full bg-[#3B1547]">
+              <Icon  className="text-white lg:h-5 lg:w-5 h-4 w-4" />
             </div>
 
             <CardTitle className="mb-1 text-lg font-semibold text-[#3E1647]">

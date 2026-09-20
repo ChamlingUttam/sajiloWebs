@@ -1,5 +1,6 @@
 import { Gem } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const BookDemoSection = () => {
@@ -66,6 +67,7 @@ const BookDemoSection = () => {
               type="email"
               placeholder="Enter your email address"
               className="
+              placeholder:text-white
                 w-full
                 flex-1
                 bg-white/10
@@ -83,7 +85,7 @@ const BookDemoSection = () => {
               "
             />
 
-            <button
+            <Link href={"/schedule-demo"}
               className="
                 w-full
                 sm:w-auto
@@ -100,7 +102,7 @@ const BookDemoSection = () => {
               "
             >
               Book a Demo
-            </button>
+            </Link>
           </div>
 
           {/* Features */}

@@ -1,0 +1,95 @@
+name: Deploy to Droplet (Production Prod Branch)
+
+on:
+  push:
+    branches:
+      - prod
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24'
+        cache: 'npm'
+
+    - name: Install dependencies (with dev)
+      run: npm ci
+
+    - name: Build application
+      env:
+        NEXT_PUBLIC_FRONTEND_URL: https://sajilows.com/
+        NEXT_PUBLIC_SERVER_URL: https://sajilowebs.product-api.hamroyouthit.com/
+        NEXT_PUBLIC_API_URL: https://api.sajilows.com
+      run: npm run build
+
+    - name: Prune devDependencies
+      run: npm prune --production
+
+    - name: Create deployment package
+      run: |
+        mkdir deployment-package
+
+        cp -r .next deployment-package/
+        cp -r public deployment-package/ || true
+        cp -r assets deployment-package/ || true
+        cp -r node_modules deployment-package/
+
+        cp package.json deployment-package/
+        cp ecosystem.config.cjs deployment-package/
+        cp next.config.ts deployment-package/
+
+        tar -czf deployment.tar.gz -C deployment-package .
+
+    - name: Upload deployment package
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.DEPLOY_IP }}
+        username: ${{ secrets.DEPLOY_USER }}
+        password: ${{ secrets.DEPLOY_PSD }}
+        source: "deployment.tar.gz"
+        target: "/tmp/"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to server
+      uses: appleboy/ssh-action@v1.2.2
+      with:
+        host: ${{ secrets.DEPLOY_IP }}
+        username: ${{ secrets.DEPLOY_USER }}
+        password: ${{ secrets.DEPLOY_PSD }}
+        script: |
+          set -e
+
+          # Go to your REAL project location
+          cd /home/sajilows/sajilows/front-site
+
+          # Stop PM2 process
+          # pm2 stop /home/sajilows/sajilows/front-site 2>/dev/null || true
+
+          # Remove old build
+          rm -rf .next node_modules public assets || true
+
+          # Extract new build
+          tar -xzf /tmp/deployment.tar.gz -C .
+
+          # Restart PM2 with correct app name
+          if pm2 describe /home/sajilows/sajilows/front-site > /dev/null; then
+            pm2 restart ecosystem.config.cjs --update-env
+          else
+            pm2 start ecosystem.config.cjs --name /home/sajilows/sajilows/front-site
+          fi
+
+          # Cleanup
+          rm -f /tmp/deployment.tar.gz
+
+          echo "🚀 Staging deployment completed!"

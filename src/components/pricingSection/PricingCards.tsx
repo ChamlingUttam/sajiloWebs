@@ -12,6 +12,7 @@ import {
 } from "../ui/card";
 import { Button } from "../ui/button";
 import { usePrice } from "@/src/hooks/price";
+import { BlogCardSkeleton } from "@/app/our-blog/components/BlogCardSkeleton";
 
 type Price = {
   subscription: string;
@@ -21,7 +22,19 @@ type Price = {
 };
 
 const PricingCard = () => {
-  const { data: priceData } = usePrice();
+  const { data: priceData,isLoading } = usePrice();
+
+  if(isLoading){
+    return (
+       <section className="bg-white px-2 py-10 lg:px-18">
+               <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:px-22">
+                 {Array.from({ length: 6 }).map((_, index) => (
+                   <BlogCardSkeleton key={index} />
+                 ))}
+               </div>
+             </section>
+    )
+  }
 
   return (
     <section className="px-4 sm:px-6 lg:px-40 py-12 bg-[#FCFAFC]">
@@ -69,7 +82,7 @@ const PricingCard = () => {
             </CardContent>
 
             <CardFooter className="pb-5 pt-2 bg-transparent">
-              <Button className="h-8 w-full text-xs bg-[#D3C8D6] text-[#160818] font-medium">
+              <Button className="h-8 cursor-pointer w-full text-xs bg-[#D3C8D6] text-[#160818] hover:text-white font-medium">
                 Get Started
               </Button>
             </CardFooter>

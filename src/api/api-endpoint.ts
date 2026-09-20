@@ -3,6 +3,7 @@ export const API_ENDPOINTS = {
         BLOG: `/public/blog`,
         BLOG_ID:(id:number|string) => `/public/blog/${id}`,
         FAQ:`/public/faq`,
-        PRICE:`/public/pricing`
+        PRICE:`/public/pricing`,
+        TEMPLATE:`/public/templates/`
     }
 }

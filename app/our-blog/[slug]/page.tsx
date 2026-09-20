@@ -7,6 +7,7 @@ import { Calendar, User } from "lucide-react"
 import Image from "next/image"
 import { useParams } from "next/navigation"
 import { useEffect } from "react"
+import { BlogCardSkeleton } from "../components/BlogCardSkeleton"
 
 export default function BlogPage() {
   const params = useParams<{ slug: string }>()
@@ -36,10 +37,14 @@ export default function BlogPage() {
   // Loading state
   if (blogsLoading || blogLoading) {
     return (
-      <div className="p-10 text-center">
-        Loading...
-      </div>
-    )
+        <section className="bg-white px-2 py-10 lg:px-18">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:px-22">
+            {Array.from({ length: 6 }).map((_, index) => (
+              <BlogCardSkeleton key={index} />
+            ))}
+          </div>
+        </section>
+      );
   }
 
   // Blog not found
@@ -52,12 +57,12 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white  w-full px-4 py-6 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white  w-full px-4 py-6 sm:px-6 lg:px-10">
       <Card className="mx-auto flex  w-full max-w-5xl flex-col items-center overflow-hidden py-0">
 
         {/* Image */}
         {blogsDataId?.image && (
-          <div className="relative aspect-video w-full overflow-hidden">
+          <div className="relative aspect-video w-full lg:max-w-4xl max-w-md rounded-2xl  overflow-hidden">
             <Image
               src={`https://sajilowebs.product-api.hamroyouthit.com${blogsDataId.image}`}
               alt={blogsDataId.title ?? "Blog image"}
@@ -104,7 +109,7 @@ export default function BlogPage() {
           </CardAction>
 
           {/* Title */}
-          <CardTitle className="mt-6 w-full text-center">
+          <CardTitle className="mt-6 w-full px-1 text-center">
             <h1 className="text-xl font-semibold leading-tight text-[#491A53] sm:text-2xl md:text-3xl lg:text-4xl">
               {blogsDataId?.title}
             </h1>
@@ -121,6 +126,7 @@ export default function BlogPage() {
                 sm:text-lg
                 sm:leading-8
                 lg:text-xl
+                px-5
                 lg:leading-10
               "
               dangerouslySetInnerHTML={{

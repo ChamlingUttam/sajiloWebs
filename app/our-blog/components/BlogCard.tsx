@@ -120,7 +120,7 @@ import {
 
 import type { Blog } from "./BlogGrid";
 
-const FALLBACK_IMAGE = "/Logo.png";
+const FALLBACK_IMAGE = "/aaaa.png";
 
 interface BlogCardProps {
   blog: Blog;
@@ -178,7 +178,7 @@ export function BlogCard({ blog }: BlogCardProps) {
             />
 
             <span className="text-sm text-[#491A53]">
-              By {blog.Author || "Stock Team"}
+              By {blog.Author || "Sajilo Team"}
             </span>
           </div>
 

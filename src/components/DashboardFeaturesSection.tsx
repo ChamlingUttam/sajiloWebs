@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PenLine, ListChecks, Languages, Users, LineChart } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   { image: "/assets/homepage/bed-single.png", text: "Manage rooms, rates, photos, and content" },
@@ -28,9 +29,9 @@ export default function DashboardFeaturesSection() {
     <button className="bg-[#FF751F] hover:bg-orange-600 border border-[#CC5E19] text-white text-xs sm:text-sm font-medium px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg whitespace-nowrap">
       Start 14-Days Free Trial
     </button>
-    <button className="bg-[#EDE8EE] border border-[#EDE8EE] text-[#160818] text-xs sm:text-sm font-medium px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg whitespace-nowrap hover:bg-gray-50">
+    <Link href={"/schedule-demo"} className="bg-[#EDE8EE] border border-[#EDE8EE] text-[#160818] text-xs sm:text-sm font-medium px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg whitespace-nowrap hover:bg-gray-50">
       Book a Demo
-    </button>
+    </Link>
   </div>
 
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-10 md:gap-12 items-center mt-14 text-left">

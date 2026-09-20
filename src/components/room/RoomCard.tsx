@@ -59,7 +59,8 @@ import { Wand2 } from "lucide-react";
 
 export function RoomCard() {
   return (
-    <Card className="relative mx-auto w-full max-w-xl px-5  py-2 shadow-none md:max-w-4xl lg:px-1 lg:py-4">
+    <div className="w-full">
+      <Card className="relative mx-auto w-full max-w-5xl   py-2 shadow-none md:max-w-4xl lg:px-1 lg:py-4">
       <Image
         src="/room.png"
         alt="Room and rate management"
@@ -69,11 +70,11 @@ export function RoomCard() {
       />
 
       <CardHeader>
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#491A53]">
-          <Wand2  className="text-white" />
+        <span className="flex h-8 w-8 lg:h-10 lg:w-10 items-center justify-center rounded-full bg-[#491A53]">
+          <Wand2  className="text-white h-4 w-4 lg:w-5 lg:h-5" />
         </span>
 
-        <CardTitle className="mb-1 text-lg font-semibold text-[#491A53]">
+        <CardTitle className="mb-1 lg:text-lg text-md font-semibold text-[#491A53]">
           Room & Rate Management
         </CardTitle>
 
@@ -83,5 +84,8 @@ export function RoomCard() {
         </CardDescription>
       </CardHeader>
     </Card>
+
+    </div>
+    
   );
 }
