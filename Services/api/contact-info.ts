@@ -21,4 +21,4 @@ type ContactInfoResponse = {
 };
 
 export const getContactInfo = () =>
-  api.get<ContactInfoResponse>("/public/contact_info").then((res) => res.data.data.data);
+  api.get<ContactInfoResponse>("api/v1/public/contact_info").then((res) => res.data.data.data);

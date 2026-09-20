@@ -130,7 +130,7 @@ export function BlogCard({ blog }: BlogCardProps) {
   const router = useRouter();
 
   const imageUrl = blog.image
-    ? `https://sajilowebs.product-api.hamroyouthit.com${blog.image}`
+    ? `${process.env.NEXT_PUBLIC_SAJILO_URL}${blog.image}`
     : FALLBACK_IMAGE;
 
   const [imageSrc, setImageSrc] = useState(imageUrl);

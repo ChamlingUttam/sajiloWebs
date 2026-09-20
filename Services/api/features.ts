@@ -22,8 +22,8 @@ type FeaturesResponse = {
 };
 
 export const getFeatures = () =>
-  api.get<FeaturesResponse>("/public/features").then((res) => res.data.data.data);
+  api.get<FeaturesResponse>("api/v1/public/features").then((res) => res.data.data.data);
 
 export const getFeatureById = (id: number) =>
-  api.get<{ status: string; data: Feature; message: string }>(`/public/features/${id}`)
+  api.get<{ status: string; data: Feature; message: string }>(`api/v1/public/features/${id}`)
     .then((res) => res.data.data);

@@ -137,8 +137,8 @@ const cards = [
 
 export default function RoomManagementSection() {
   return (
-   <section className="bg-white  px-6  md:px-40 w-full ">
-  <div className="mx-auto max-w-7xl w-full">
+   <section className="bg-white  px-6  w-full ">
+  <div className="mx-auto max-w-4xl w-full">
     <div className="flex flex-col gap-4 md:flex-row md:gap-8">
       {cards.map(({ icon: Icon, title, description, bg, image }) => (
         <Card
