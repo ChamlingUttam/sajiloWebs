@@ -1,13 +1,26 @@
-import { Pencil, XCircle, Settings, ShieldCheck, HandCoins, Headset, type LucideIcon } from 'lucide-react'
-import React from 'react'
-import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card'
+import {
+  Pencil,
+  XCircle,
+  Settings,
+  ShieldCheck,
+  HandCoins,
+  Headset,
+  type LucideIcon,
+} from "lucide-react";
+import React from "react";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 
 type Reason = {
-  id: string | number
-  title: string
-  description: string
-  icon: LucideIcon
-}
+  id: string | number;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
 
 const reasons: Reason[] = [
   {
@@ -52,45 +65,84 @@ const reasons: Reason[] = [
     description:
       "Get reliable assistance anytime with dedicated support whenever you need help.",
   },
-]
+];
 
 const PricingDownSection = () => {
   return (
-    <section className="bg-white w-full py-10 lg:px-27 px-2">
-      <header className="flex flex-col text-center justify-center px-4 sm:px-12">
-        <h2 className="text-[#491A53] text-2xl sm:text-3xl lg:text-4xl font-bold">
-          Why Choose Us?
-        </h2>
-        <p className="text-[#491A53]/70 text-sm mt-1">
-          We&apos;re committed to providing the best value for your investment.
-        </p>
-      </header>
+    <section className="w-full bg-white py-10 sm:py-14 lg:py-16">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10">
+        {/* Header */}
+        <header className="flex flex-col items-center justify-center text-center">
+          <h2 className="text-2xl font-bold text-[#491A53] sm:text-3xl lg:text-4xl">
+            Why Choose Us?
+          </h2>
 
-      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-12">
-        {reasons.map((reason) => {
-          const Icon = reason.icon;
+          <p className="mt-1 text-sm text-[#491A53]/70 sm:text-base">
+            We&apos;re committed to providing the best value for your
+            investment.
+          </p>
+        </header>
 
-          return (
-            <Card key={reason.id} className="w-full border border-[#e4dfe5] shadow-sm">
-              <CardHeader>
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#491A53] text-white">
-                  <Icon className="h-5 w-5" />
-                </div>
+        {/* Reasons */}
+        <div
+          className="
+            mt-10
+            grid
+            grid-cols-1
+            gap-5
+            sm:grid-cols-2
+            lg:grid-cols-3
+            lg:gap-6
+          "
+        >
+          {reasons.map((reason) => {
+            const Icon = reason.icon;
 
-                <CardTitle className="text-lg text-[#491A53]">
-                  {reason.title}
-                </CardTitle>
+            return (
+              <Card
+                key={reason.id}
+                className="
+                  w-full
+                  min-w-0
+                  border
+                  border-[#e4dfe5]
+                  shadow-sm
+                "
+              >
+                <CardHeader>
+                  {/* Icon */}
+                  <div
+                    className="
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-[#491A53]
+                      text-white
+                    "
+                  >
+                    <Icon className="h-5 w-5" />
+                  </div>
 
-                <CardDescription className="leading-6 text-sm text-[#491A53]/70">
-                  {reason.description}
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          );
-        })}
+                  {/* Title */}
+                  <CardTitle className="text-lg text-[#491A53]">
+                    {reason.title}
+                  </CardTitle>
+
+                  {/* Description */}
+                  <CardDescription className="text-sm leading-6 text-[#491A53]/70">
+                    {reason.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PricingDownSection
+export default PricingDownSection;

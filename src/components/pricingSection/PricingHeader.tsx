@@ -40,21 +40,6 @@
 
 // export default PricingHeader;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 
 import React, { useState } from "react";
@@ -63,51 +48,116 @@ const PricingHeader = () => {
   const [billing, setBilling] = useState("monthly");
 
   return (
-    <div>
-      <header className="flex w-full flex-col items-center justify-center bg-[#3E1647] px-6 py-16 text-center text-white sm:px-8 lg:px-12 lg:py-24">
-        <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-          A plan that grows with
-          <br className="hidden sm:block" />
+    <section className="w-full bg-[#3E1647] text-white">
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-7xl
+          flex-col
+          items-center
+          justify-center
+          px-4
+          py-16
+          text-center
+          sm:px-6
+          md:px-10
+          lg:py-24
+        "
+      >
+        <h1
+          className="
+            max-w-3xl
+            text-4xl
+            font-bold
+            leading-tight
+            tracking-tight
+            sm:text-5xl
+            lg:text-6xl
+          "
+        >
+          A plan that grows with <br className="hidden sm:block" />
           every booking
         </h1>
 
-        <p className="mt-5 max-w-2xl text-sm leading-6 text-white/90 sm:text-base lg:text-lg lg:leading-7">
+        <p
+          className="
+            mt-5
+            max-w-2xl
+            text-sm
+            leading-6
+            text-white/90
+            sm:text-base
+            lg:text-lg
+            lg:leading-7
+          "
+        >
           Launch your hotel website, accept direct reservations, and grow your
           revenue — without commission fees.
         </p>
 
+        {/* Billing Toggle */}
         <div className="mt-8 flex w-fit items-center rounded-full bg-white/10 p-1">
           <button
             onClick={() => setBilling("monthly")}
-            className={`rounded-full px-4 py-2 cursor-pointer text-xs font-medium transition-colors sm:px-6 sm:py-2.5 sm:text-sm ${
-              billing === "monthly"
-                ? "bg-gray-100 text-[#491A53]"
-                : "text-white hover:bg-white/10"
-            }`}
+            className={`
+              cursor-pointer
+              rounded-full
+              px-4
+              py-2
+              text-xs
+              font-medium
+              transition-colors
+              sm:px-6
+              sm:py-2.5
+              sm:text-sm
+              ${
+                billing === "monthly"
+                  ? "bg-gray-100 text-[#491A53]"
+                  : "text-white hover:bg-white/10"
+              }
+            `}
           >
             Monthly
           </button>
 
           <button
             onClick={() => setBilling("yearly")}
-            className={`rounded-full px-4 py-2 cursor-pointer text-xs font-medium transition-colors sm:px-6 sm:py-2.5 sm:text-sm ${
-              billing === "yearly"
-                ? "bg-gray-100 text-[#491A53]"
-                : "text-white hover:bg-white/10"
-            }`}
+            className={`
+              cursor-pointer
+              rounded-full
+              px-4
+              py-2
+              text-xs
+              font-medium
+              transition-colors
+              sm:px-6
+              sm:py-2.5
+              sm:text-sm
+              ${
+                billing === "yearly"
+                  ? "bg-gray-100 text-[#491A53]"
+                  : "text-white hover:bg-white/10"
+              }
+            `}
           >
             Yearly
             <span
-              className={`ml-1 text-[10px] sm:ml-2 sm:text-xs ${
-                billing === "yearly" ? "text-green-600" : "text-green-400"
-              }`}
+              className={`
+                ml-1
+                text-[10px]
+                sm:ml-2
+                sm:text-xs
+                ${billing === "yearly" ? "text-green-600" : "text-green-400"}
+              `}
             >
               Save 20%
             </span>
           </button>
         </div>
-      </header>
-    </div>
+      </div>
+    </section>
   );
 };
 

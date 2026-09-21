@@ -16,10 +16,10 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="w-full bg-[#3E1647] text-white px-4 py-10 sm:px-6 md:px-20 ">
-      <div className="">
+    <footer className="w-full bg-[#3E1647] text-white px-4 py-10 sm:px-6 md:px-10 lg:px-20">
+      <div className="max-w-7xl mx-auto w-full">
 
-        <div className="flex flex-col md:flex-row px-20 justify-between gap-20">
+        <div className="flex flex-col md:flex-row justify-between gap-10">
 
           {/* Left */}
           <div className="flex flex-col max-w-md">
@@ -43,12 +43,12 @@ export default function Footer() {
           </div>
 
           {/* Right */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:gap-4  ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-10 md:gap-16">
 
             <div>
               <h3 className="text-base font-semibold mb-4">Product</h3>
               <ul className="flex flex-col gap-3 text-sm text-gray-200">
-                <li><Link href="/#features" className="hover:text-white">Features</Link></li>
+                <li><Link href="/#feature" className="hover:text-white">Features</Link></li>
                 <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
                 <li><a href="#" className="hover:text-white">Templates</a></li>
               </ul>
@@ -63,16 +63,16 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="col-span-2 sm:col-span-1 ">
+            <div className="col-span-2 sm:col-span-1">
               <h3 className="text-base font-semibold mb-4">Contact Us</h3>
               <ul className="flex flex-col gap-3 text-sm text-gray-200">
                 <li>
-                  <a href={`mailto:${contact?.email ?? "hello@example.com"}`} className="hover:text-white whitespace-nowrap">
+                  <a href={`mailto:${contact?.email ?? "hello@example.com"}`} className="hover:text-white break-all">
                     {contact?.email ?? "hello@example.com"}
                   </a>
                 </li>
                 <li>
-                  <a href={`tel:${contact?.phone ?? "+9779800000000"}`} className="hover:text-white whitespace-nowrap">
+                  <a href={`tel:${contact?.phone ?? "+9779800000000"}`} className="hover:text-white">
                     {contact?.phone ?? "+977 9800000000"}
                   </a>
                 </li>
@@ -83,9 +83,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-300 px-20">
-          <span>© {new Date().getFullYear()} Your Company. All rights reserved.</span>
-          <div className="flex gap-4 flex-col md:flex-row">
+        <div className="border-t border-white/20 mt-10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-300">
+          <span>© {new Date().getFullYear()}. All rights reserved.</span>
+          <div className="flex gap-4">
             <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
             <Link href={"/Terms-condition"} className="cursor-pointer hover:text-white">Term of Service</Link>
           </div>
@@ -95,18 +95,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

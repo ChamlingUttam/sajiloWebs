@@ -12,7 +12,6 @@
 // import { zodResolver } from "@hookform/resolvers/zod";
 // import { ContactFormData, contactSchema } from "@/src/schema/contact.schema";
 // import { submitContactUs } from "@/Services/api/contact";
-// import { Mail, MapPin, Phone } from "lucide-react";
 
 // export default function ContactForm() {
 //   const {
@@ -48,7 +47,7 @@
 //   };
 
 //   return (
-//       <div className="flex min-h-fit items-center justify-center bg-[#FCFAFc] p-6">
+//     <div className="flex min-h-screen items-center justify-center bg-white p-6">
 //       <Card className="w-full max-w-2xl rounded-3xl border-none bg-[#491A53] text-white shadow-xl">
 //         <CardContent className="p-4 lg:p-8">
 
@@ -59,14 +58,14 @@
 
 //             {/* First Name */}
 //             <div className="flex flex-col gap-2">
-//               <Label htmlFor="firstName" className="text-sm font-medium text-white">
+//               <Label htmlFor="firstName" className="text-sm font-medium text-white/70">
 //                 First Name
 //               </Label>
 //               <Input
 //                 id="firstName"
 //                 placeholder="John"
 //                 {...register("firstName")}
-//                 className="h-12 rounded-xl placeholder:text-white text-white "
+//                 className="h-12 rounded-xl text-white placeholder:text-white/50"
 //               />
 //               {errors.firstName && (
 //                 <p className="text-sm text-red-300">{errors.firstName.message}</p>
@@ -75,14 +74,14 @@
 
 //             {/* Last Name */}
 //             <div className="flex flex-col gap-2">
-//               <Label htmlFor="lastName" className="text-sm font-medium text-white">
+//               <Label htmlFor="lastName" className="text-sm font-medium text-white/70">
 //                 Last Name
 //               </Label>
 //               <Input
 //                 id="lastName"
 //                 placeholder="Doe"
 //                 {...register("lastName")}
-//                 className="h-12 rounded-xl  text-white placeholder:text-white"
+//                 className="h-12 rounded-xl bg-white/10 text-white placeholder:text-white/50"
 //               />
 //               {errors.lastName && (
 //                 <p className="text-sm text-red-300">{errors.lastName.message}</p>
@@ -91,7 +90,7 @@
 
 //             {/* Phone */}
 //             <div className="flex flex-col gap-2">
-//               <Label htmlFor="phone" className="text-sm font-medium text-white">
+//               <Label htmlFor="phone" className="text-sm font-medium text-white/70">
 //                 Phone Number
 //               </Label>
 //             <Input
@@ -99,7 +98,7 @@
 //   type="tel"
 //   placeholder="98XXXXXXXX"
 //   {...register("phone")}
-//   className="h-12 rounded-xl  text-white placeholder:text-white"
+//   className="h-12 rounded-xl bg-white/10 text-white placeholder:text-white/50"
 // />
 //               {errors.phone && (
 //                 <p className="text-sm text-red-300">{errors.phone.message}</p>
@@ -108,7 +107,7 @@
 
 //             {/* Email */}
 //             <div className="flex flex-col gap-2">
-//               <Label htmlFor="email" className="text-sm font-medium text-white">
+//               <Label htmlFor="email" className="text-sm font-medium text-white/70">
 //                 Email Address
 //               </Label>
 //               <Input
@@ -116,7 +115,7 @@
 //                 type="email"
 //                 placeholder="johndoe@gmail.com"
 //                 {...register("email")}
-//                 className="h-12 rounded-xl text-white placeholder:text-white"
+//                 className="h-12 rounded-xl text-white placeholder:text-white/50"
 //               />
 //               {errors.email && (
 //                 <p className="text-sm text-red-300">{errors.email.message}</p>
@@ -125,14 +124,14 @@
 
 //             {/* Message */}
 //             <div className="flex flex-col gap-2 sm:col-span-2">
-//               <Label htmlFor="message" className="text-sm font-medium text-white">
+//               <Label htmlFor="message" className="text-sm font-medium text-white/70">
 //                 Message
 //               </Label>
 //               <Textarea
 //                 id="message"
 //                 placeholder="Tell us how can we help you..."
 //                 {...register("message")}
-//                 className="min-h-13 resize-none rounded-xl   text-white placeholder:text-white"
+//                 className="min-h-13 resize-none rounded-xl bg-white/10 text-white placeholder:text-white/50"
 //               />
 //               {errors.message && (
 //                 <p className="text-sm text-red-300">{errors.message.message}</p>
@@ -164,28 +163,11 @@
 
 //         </CardContent>
 //       </Card>
-
-//     {/** need help card */}
-//       <div className="bg-[#FFFFFF] rounded-2xl p-5 sm:p-6 border border-gray-200 ">
-//         <h3 className="font-semibold text-[#491A53] text-base mb-4">Need Help?</h3>
-//         <ul className="flex flex-col gap-3 text-sm text-gray-600">
-//           <li className="flex items-center gap-2 text-[#491A53]">
-//             <Mail size={14} className="text-[#491A53] shrink-0" />
-//             <a href="mailto:hello@sajilows.com">hello@sajilows.com</a>
-//           </li>
-//           <li className="flex items-center gap-2 text-[#491A53]">
-//             <Phone size={14} className="text-[#491A53] shrink-0" />
-//             <a href="tel:+9749746888890" >974-6888890</a>
-//           </li>
-//           <li className="flex items-center gap-2 text-[#491A53]">
-//             <MapPin size={14} className=" shrink-0" />
-//             Pragati Chowk, Itahari
-//           </li>
-//         </ul>
-//       </div>
 //     </div>
 //   );
 // }
+
+
 
 
 
@@ -206,19 +188,27 @@
 
 import { useState } from "react";
 import { isAxiosError } from "axios";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+
 import {
   ContactFormData,
   contactSchema,
 } from "@/src/schema/contact.schema";
+
 import { submitContactUs } from "@/Services/api/contact";
-import { Mail, MapPin, Phone } from "lucide-react";
+
+import {
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 
 export default function ContactForm() {
   const {
@@ -249,25 +239,26 @@ export default function ContactForm() {
         ? err.response?.data?.message
         : undefined;
 
-      setSubmitError(message || "Something went wrong. Try again.");
+      setSubmitError(
+        message || "Something went wrong. Try again."
+      );
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="w-full bg-[#FCFAFC] px-4 py-8 sm:px-6 lg:px-10">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:gap-4 lg:px-30 md:20">
-
+    <section className="w-full bg-[#FCFAFC] py-8 sm:py-10 lg:py-14">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-4 sm:px-6 md:px-10 md:grid-cols-2 lg:gap-8">
         {/* Contact Form */}
-        <Card className="h-full w-full rounded-3xl border-none bg-[#491A53] text-white shadow-xl">
+        <Card className="h-full w-full min-w-0 rounded-3xl border-none bg-[#491A53] text-white shadow-xl">
           <CardContent className="p-4 sm:p-6 lg:p-8">
             <form
               onSubmit={handleSubmit(handleContactSubmit)}
               className="grid grid-cols-1 gap-5 sm:grid-cols-2"
             >
               {/* First Name */}
-              <div className="flex flex-col gap-2">
+              <div className="flex min-w-0 flex-col gap-2">
                 <Label
                   htmlFor="firstName"
                   className="text-sm font-medium text-white"
@@ -279,7 +270,7 @@ export default function ContactForm() {
                   id="firstName"
                   placeholder="John"
                   {...register("firstName")}
-                  className="h-12 rounded-xl text-white placeholder:text-white"
+                  className="h-12 rounded-xl text-white placeholder:text-white/60"
                 />
 
                 {errors.firstName && (
@@ -290,7 +281,7 @@ export default function ContactForm() {
               </div>
 
               {/* Last Name */}
-              <div className="flex flex-col gap-2">
+              <div className="flex min-w-0 flex-col gap-2">
                 <Label
                   htmlFor="lastName"
                   className="text-sm font-medium text-white"
@@ -302,7 +293,7 @@ export default function ContactForm() {
                   id="lastName"
                   placeholder="Doe"
                   {...register("lastName")}
-                  className="h-12 rounded-xl text-white placeholder:text-white"
+                  className="h-12 rounded-xl text-white placeholder:text-white/60"
                 />
 
                 {errors.lastName && (
@@ -313,7 +304,7 @@ export default function ContactForm() {
               </div>
 
               {/* Phone */}
-              <div className="flex flex-col gap-2">
+              <div className="flex min-w-0 flex-col gap-2">
                 <Label
                   htmlFor="phone"
                   className="text-sm font-medium text-white"
@@ -326,7 +317,7 @@ export default function ContactForm() {
                   type="tel"
                   placeholder="98XXXXXXXX"
                   {...register("phone")}
-                  className="h-12 rounded-xl text-white placeholder:text-white"
+                  className="h-12 rounded-xl text-white placeholder:text-white/60"
                 />
 
                 {errors.phone && (
@@ -337,7 +328,7 @@ export default function ContactForm() {
               </div>
 
               {/* Email */}
-              <div className="flex flex-col gap-2">
+              <div className="flex min-w-0 flex-col gap-2">
                 <Label
                   htmlFor="email"
                   className="text-sm font-medium text-white"
@@ -350,7 +341,7 @@ export default function ContactForm() {
                   type="email"
                   placeholder="johndoe@gmail.com"
                   {...register("email")}
-                  className="h-12 rounded-xl text-white placeholder:text-white"
+                  className="h-12 rounded-xl text-white placeholder:text-white/60"
                 />
 
                 {errors.email && (
@@ -361,7 +352,7 @@ export default function ContactForm() {
               </div>
 
               {/* Message */}
-              <div className="flex flex-col gap-2 sm:col-span-2">
+              <div className="flex min-w-0 flex-col gap-2 sm:col-span-2">
                 <Label
                   htmlFor="message"
                   className="text-sm font-medium text-white"
@@ -373,7 +364,7 @@ export default function ContactForm() {
                   id="message"
                   placeholder="Tell us how can we help you..."
                   {...register("message")}
-                  className="min-h-32 resize-none rounded-xl text-white placeholder:text-white"
+                  className="min-h-32 resize-none rounded-xl text-white placeholder:text-white/60"
                 />
 
                 {errors.message && (
@@ -410,13 +401,14 @@ export default function ContactForm() {
         </Card>
 
         {/* Need Help */}
-        <div className="flex h-full flex-col rounded-3xl justify-center border border-gray-200 bg-white p-5 shadow-sm sm:p-6 lg:p-8">
+        <div className="flex h-full min-w-0 flex-col justify-center rounded-3xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6 lg:p-8">
           <h3 className="mb-6 text-lg font-semibold text-[#491A53]">
             Need Help?
           </h3>
 
           <ul className="flex flex-col gap-5 text-sm">
-            <li className="flex items-center gap-3 text-[#491A53]">
+            {/* Email */}
+            <li className="flex min-w-0 items-center gap-3 text-[#491A53]">
               <Mail
                 size={18}
                 className="shrink-0 text-[#491A53]"
@@ -430,6 +422,7 @@ export default function ContactForm() {
               </a>
             </li>
 
+            {/* Phone */}
             <li className="flex items-center gap-3 text-[#491A53]">
               <Phone
                 size={18}
@@ -444,6 +437,7 @@ export default function ContactForm() {
               </a>
             </li>
 
+            {/* Location */}
             <li className="flex items-center gap-3 text-[#491A53]">
               <MapPin
                 size={18}
@@ -454,7 +448,6 @@ export default function ContactForm() {
             </li>
           </ul>
         </div>
-
       </div>
     </section>
   );

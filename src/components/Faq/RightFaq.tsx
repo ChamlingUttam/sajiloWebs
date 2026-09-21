@@ -23,7 +23,7 @@ const RightFaq = () => {
 
     
   return (
-    <section className="space-y-8  px-10 ">
+    <section className="space-y-8 px-10 ">
         <p className='text-md'>Everything you need to create, manage, and grow your hotel’s <br /> online presence- all in one platform.</p>
 
         {faqdata?.map((faq: Faq)=>( 

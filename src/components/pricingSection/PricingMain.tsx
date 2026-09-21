@@ -5,7 +5,7 @@ import PricingDownSection from './PricingDownSection'
 
 const PricingMain = () => {
   return (
-    <div>
+    <div className='w-full'>
       <PricingHeader/>
       <PricingCard/>
       <PricingDownSection/>
