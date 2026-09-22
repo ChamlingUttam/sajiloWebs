@@ -142,7 +142,7 @@ export default function ContactForm() {
                   type="tel"
                   placeholder="98XXXXXXXX"
                   {...register("phone")}
-                  className="h-12 rounded-xl border-1 border-[#E2E8F0]  text-[#EDE8EE] placeholder:text-[#EDE8EE]"
+                  className="h-12 rounded-xl     text-[#EDE8EE] placeholder:text-[#EDE8EE]"
                 />
 
                 {errors.phone && (
