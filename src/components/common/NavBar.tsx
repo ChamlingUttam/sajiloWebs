@@ -56,7 +56,7 @@ export default function Navbar() {
             <Button
               variant="secondary"
               size="sm"
-              className="px-5 transition-transform hover:scale-[1.03]"
+              className="px-8 py-4 transition-transform cursor-pointer hover:scale-[1.03] rounded-sm"
             >
               Login
             </Button>
@@ -68,7 +68,7 @@ export default function Navbar() {
 >
             <Button
               size="sm"
-              className="bg-[#FF751F] text-[#EDE8EE] transition-transform px-4 hover:scale-[1.03] hover:bg-[#e15e0d]"
+              className="bg-[#FF751F] px-8 py-4 cursor-pointer text-[#EDE8EE] transition-transform  hover:scale-[1.03] hover:bg-[#e15e0d]"
             >
               Demo
             </Button>
@@ -141,7 +141,7 @@ export default function Navbar() {
           <a href={`${process.env.NEXT_PUBLIC_APP_URL}`} onClick={() => setOpen(false)}>
             <Button
               variant="outline"
-              className="w-full border-[#3E1647]/20 py-4 text-base text-[#3E1647] hover:bg-gray-50"
+              className="w-full cursor-pointer border-[#3E1647]/20 py-4 text-base text-[#3E1647] hover:bg-gray-50"
             >
               Login
             </Button>
@@ -152,7 +152,7 @@ export default function Navbar() {
   )}&password=${encodeURIComponent("12345678")}`}
   onClick={() => setOpen(false)}
 >
-            <Button className="w-full bg-[#3E1647] text-[#EDE8EE] py-4 text-base hover:bg-[#4d1c59]">
+            <Button className="w-full bg-[#3E1647] cursor-pointer text-[#EDE8EE] py-4 text-base hover:bg-[#4d1c59]">
               Demo
             </Button>
           </a>

@@ -30,7 +30,7 @@ export function CardOne() {
       </div>
 
       <CardHeader className="flex flex-col gap-4">
-        <span className="h-10 w-10 bg-[#491A53] text-white rounded-full flex items-center justify-around"><LayoutGrid/></span>
+        <span className="lg:h-10 lg:w-10 w-8 h-8 bg-[#491A53] text-white rounded-full flex items-center justify-around"><LayoutGrid className="h-4 w-4 lg:w-5 lg:h-5"/></span>
         <CardTitle><h1 className="font-semibold text-lg text-[#491A53]"> Drag &amp; Drop Builder</h1></CardTitle>
 
         <CardDescription>

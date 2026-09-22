@@ -27,7 +27,9 @@ export function CardTwo() {
       </div>
 
       <CardHeader className="flex flex-col gap-4">
-        <span className="h-10 w-10 bg-[#491A53] text-white rounded-full flex items-center justify-around">< ListChecks/></span>
+        <span className="lg:h-10 lg:w-10 h-8 w-8 bg-[#491A53] text-white rounded-full flex items-center justify-around">
+          < ListChecks className="lg:h-5 lg:w-5 h-4 w-4"/>
+          </span>
                 <CardTitle><h1 className="font-semibold text-lg text-[#491A53]"> Real-Time Booking Engine
 </h1></CardTitle>
 

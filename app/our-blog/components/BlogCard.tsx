@@ -31,7 +31,7 @@ export function BlogCard({ blog }: BlogCardProps) {
     ? `${process.env.NEXT_PUBLIC_SAJILO_URL}${blog.image}`
     : FALLBACK_IMAGE;
 
-  const [imageSrc, setImageSrc] = useState(imageUrl);
+  const [imageSrc, setImageSrc] = useState(FALLBACK_IMAGE);
 
  
 
@@ -68,6 +68,10 @@ export function BlogCard({ blog }: BlogCardProps) {
             33vw
           "
           className="object-cover transition-transform duration-300 hover:scale-105"
+          // onError={() => setImageSrc(FALLBACK_IMAGE)}
+          onLoad={() => {
+            if (imageSrc !== imageUrl) setImageSrc(imageUrl);
+          }}
           onError={() => setImageSrc(FALLBACK_IMAGE)}
         />
       </div>
