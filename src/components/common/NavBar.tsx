@@ -53,16 +53,16 @@ export default function Navbar() {
             <Button
               variant="secondary"
               size="sm"
-              className="transition-transform hover:scale-[1.03]"
+              className="px-5 transition-transform hover:scale-[1.03]"
             >
               Login
             </Button>
           </a>
-          <a href={`${process.env.NEXT_PUBLIC_APP_URL}?email=hotel@gmail.com&password=12345678`}
+          <a href={`${process.env.NEXT_PUBLIC_APP_URL}/login?email=hotel@gmail.com&password=12345678`}
 >
             <Button
               size="sm"
-              className="bg-[#FF751F] transition-transform hover:scale-[1.03] hover:bg-[#e15e0d]"
+              className="bg-[#FF751F] text-[#EDE8EE] transition-transform px-4 hover:scale-[1.03] hover:bg-[#e15e0d]"
             >
               Demo
             </Button>
@@ -135,14 +135,14 @@ export default function Navbar() {
           <a href={`${process.env.NEXT_PUBLIC_APP_URL}`} onClick={() => setOpen(false)}>
             <Button
               variant="outline"
-              className="w-full border-[#3E1647]/20 py-6 text-base text-[#3E1647] hover:bg-gray-50"
+              className="w-full border-[#3E1647]/20 py-4 text-base text-[#3E1647] hover:bg-gray-50"
             >
               Login
             </Button>
           </a>
           <a href={`${process.env.NEXT_PUBLIC_APP_URL}?email=hotel@gmail.com&password=12345678`} onClick={() => setOpen(false)}>
-            <Button className="w-full bg-[#3E1647] py-6 text-base hover:bg-[#4d1c59]">
-              Get Started →
+            <Button className="w-full bg-[#3E1647] text-[#EDE8EE] py-4 text-base hover:bg-[#4d1c59]">
+              Get Started 
             </Button>
           </a>
         </div>

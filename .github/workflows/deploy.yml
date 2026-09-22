@@ -27,6 +27,10 @@ jobs:
         NEXT_PUBLIC_FRONTEND_URL: https://test.sajilows.com/
         NEXT_PUBLIC_SAJILO_URL: https://sajilowebs.product-api.hamroyouthit.com/
         NEXT_PUBLIC_TEMPLATE_URL: https://templates-api.hamroyouthit.com/
+
+        SAJILOWEBS_API_URL=https://sajilowebs.product-api.hamroyouthit.com
+        TEMPLATES_API_URL=https://templates-api.hamroyouthit.com
+        NEXT_PUBLIC_APP_URL=https://app.sajilows.com/login
       run: npm run build
 
     - name: Prune devDependencies

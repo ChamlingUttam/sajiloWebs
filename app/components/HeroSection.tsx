@@ -1,4 +1,5 @@
 import { Gem } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -19,9 +20,9 @@ export default function Hero() {
           <button className="bg-[#FF751F] hover:bg-orange-600 text-[#EDE8EE] text-sm font-medium px-6 py-3 rounded-lg w-full sm:w-auto border border-[#CC5E19]">
             Start 14-Days Free Trial
           </button>
-          <button className="bg-white border border-gray-200 text-[#160818] text-sm font-medium px-6 py-3 rounded-lg w-full sm:w-auto hover:bg-gray-100">
+          <Link href={"/schedule-demo"} className="bg-white border border-gray-200 text-[#160818] text-sm font-medium px-6 py-3 rounded-lg w-full sm:w-auto hover:bg-gray-100">
             Book a Demo
-          </button>
+          </Link>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 mt-8 text-purple-200/60 text-xs sm:text-sm">
