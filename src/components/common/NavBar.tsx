@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -24,9 +25,11 @@ export default function Navbar() {
           className="flex shrink-0 items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
-          <img
+          <Image
             src="/aaaa.png"
             alt="Sajilo Webs"
+            width={10}
+            height={10}
             className="h-8 w-8 rounded-md sm:h-9 sm:w-9"
           />
           <span className="hidden text-base font-semibold tracking-tight lg:block">
@@ -102,7 +105,7 @@ export default function Navbar() {
 <div className="flex items-center justify-between px-5 py-4">
   <div className="flex items-center gap-2.5">
     <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#3E1647] shrink-0">
-      <img src="/aaaa.png" alt="Sajilo Webs" width={20} height={20} className="h-5 w-5 object-contain" />
+      <Image src="/aaaa.png" alt="Sajilo Webs" width={20} height={20} className="h-5 w-5 object-contain" />
     </div>
     <span className="text-base font-semibold tracking-tight text-[#3E1647]">Sajilo Webs</span>
   </div>

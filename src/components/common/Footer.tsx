@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -10,6 +9,7 @@ import {
   getContactInfo,
   ContactInfo,
 } from "@/Services/api/contact-info";
+import Image from "next/image";
 
 export default function Footer() {
   const [contact, setContact] = useState<ContactInfo | null>(null);
@@ -23,15 +23,19 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#3E1647] text-white">
       {/* Same container as Navbar */}
-      <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 md:px-10">
-        <div className="flex flex-col justify-between gap-10 md:flex-row">
+      <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 md:px-12 lg:px-12">
+        {/* Main Footer */}
+        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-16">
+          
           {/* Left */}
-          <div className="flex max-w-md flex-col">
+          <div className="w-full max-w-md">
             <div className="flex items-center gap-3">
-              <img
+              <Image
                 src="/aaaa.png"
                 alt="Logo"
-                className="h-9 w-9 rounded-md sm:h-10 sm:w-10"
+                className="h-7 w-7 rounded-md sm:h-10 sm:w-10"
+                width={10}
+                height={10}
               />
 
               <span className="text-lg font-bold">
@@ -39,7 +43,7 @@ export default function Footer() {
               </span>
             </div>
 
-            <p className="mt-4 text-sm leading-6 text-gray-200">
+            <p className="mt-4 max-w-md text-sm leading-6 text-gray-200">
               We provide simple and powerful solutions to help
               businesses grow, manage their work, and achieve better
               results.
@@ -85,7 +89,8 @@ export default function Footer() {
           </div>
 
           {/* Right */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10 md:gap-16">
+          <div className="grid w-full grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10 lg:w-auto lg:gap-16">
+            
             {/* Product */}
             <div>
               <h3 className="mb-4 text-base font-semibold">
@@ -96,7 +101,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/#features"
-                    className="hover:text-white"
+                    className="transition hover:text-white"
                   >
                     Features
                   </Link>
@@ -105,16 +110,19 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/pricing"
-                    className="hover:text-white"
+                    className="transition hover:text-white"
                   >
                     Pricing
                   </Link>
                 </li>
 
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <Link
+                    href="/templates"
+                    className="transition hover:text-white"
+                  >
                     Templates
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -129,7 +137,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/faqs"
-                    className="hover:text-white"
+                    className="transition hover:text-white"
                   >
                     FAQ
                   </Link>
@@ -138,7 +146,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/contact"
-                    className="hover:text-white"
+                    className="transition hover:text-white"
                   >
                     Contact
                   </Link>
@@ -147,7 +155,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/our-blog"
-                    className="hover:text-white"
+                    className="transition hover:text-white"
                   >
                     Blog
                   </Link>
@@ -167,7 +175,7 @@ export default function Footer() {
                     href={`mailto:${
                       contact?.email ?? "hello@example.com"
                     }`}
-                    className="break-all hover:text-white"
+                    className="break-all transition hover:text-white"
                   >
                     {contact?.email ?? "hello@example.com"}
                   </a>
@@ -178,13 +186,13 @@ export default function Footer() {
                     href={`tel:${
                       contact?.phone ?? "+9779800000000"
                     }`}
-                    className="hover:text-white"
+                    className="transition hover:text-white"
                   >
                     {contact?.phone ?? "+977 9800000000"}
                   </a>
                 </li>
 
-                <li>
+                <li className="break-words">
                   {contact?.address ?? "Kathmandu, Nepal"}
                 </li>
               </ul>
@@ -198,17 +206,17 @@ export default function Footer() {
             © {new Date().getFullYear()}. All rights reserved.
           </span>
 
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-x-4 gap-y-2">
             <Link
               href="/privacy-policy"
-              className="hover:text-white"
+              className="transition hover:text-white"
             >
               Privacy Policy
             </Link>
 
             <Link
               href="/Terms-condition"
-              className="hover:text-white"
+              className="transition hover:text-white"
             >
               Term of Service
             </Link>

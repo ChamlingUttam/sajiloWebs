@@ -13,7 +13,7 @@ import { LayoutGrid } from "lucide-react";
 
 export function CardOne() {
   return (
-    <Card className="relative mx-auto w-full  overflow-hidden pt-0">
+    <Card className="relative mx-auto w-full border-none overflow-hidden pt-0">
 
       {/* Image */}
      <div className="relative w-full">
