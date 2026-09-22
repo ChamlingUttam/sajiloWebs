@@ -7,17 +7,17 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: new URL(process.env.SAJILOWEBS_API_URL!).hostname,
+        hostname: new URL(process.env.NEXT_PUBLIC_SAJILOWEBS_API_URL!).hostname,
         pathname: "/**",
       },
       {
         protocol: "http",
-        hostname: new URL(process.env.TEMPLATES_API_URL!).hostname,
+        hostname: new URL(process.env.NEXT_PUBLIC_TEMPLATES_API_URL!).hostname,
         pathname: "/media/**",
       },
       {
         protocol: "https",
-        hostname: new URL(process.env.TEMPLATES_API_URL!).hostname,
+        hostname: new URL(process.env.NEXT_PUBLIC_TEMPLATES_API_URL!).hostname,
         pathname: "/media/**",
       },
     ],
