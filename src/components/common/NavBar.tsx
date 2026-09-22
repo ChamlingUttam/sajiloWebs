@@ -58,7 +58,10 @@ export default function Navbar() {
               Login
             </Button>
           </a>
-          <a href={`${process.env.NEXT_PUBLIC_APP_URL}/login?email=hotel@gmail.com&password=12345678`}
+         <a
+  href={`${process.env.NEXT_PUBLIC_APP_URL}?email=${encodeURIComponent(
+    "hotel@gmail.com"
+  )}&password=${encodeURIComponent("12345678")}`}
 >
             <Button
               size="sm"
@@ -140,9 +143,14 @@ export default function Navbar() {
               Login
             </Button>
           </a>
-          <a href={`${process.env.NEXT_PUBLIC_APP_URL}?email=hotel@gmail.com&password=12345678`} onClick={() => setOpen(false)}>
+          <a
+  href={`${process.env.NEXT_PUBLIC_APP_URL}?email=${encodeURIComponent(
+    "hotel@gmail.com"
+  )}&password=${encodeURIComponent("12345678")}`}
+  onClick={() => setOpen(false)}
+>
             <Button className="w-full bg-[#3E1647] text-[#EDE8EE] py-4 text-base hover:bg-[#4d1c59]">
-              Get Started 
+              Demo
             </Button>
           </a>
         </div>
