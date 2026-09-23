@@ -21,11 +21,11 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="w-full bg-[#3E1647] text-white">
+    <footer className="w-full bg-[#3B1547] text-white">
       {/* Same container as Navbar */}
-      <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 md:px-12 lg:px-12">
+      <div className="container py-5">
         {/* Main Footer */}
-        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-16">
+        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between lg:gap-8">
           
           {/* Left */}
           <div className="w-full max-w-md">
@@ -89,7 +89,7 @@ export default function Footer() {
           </div>
 
           {/* Right */}
-          <div className="grid w-full grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10 lg:w-auto lg:gap-16">
+          <div className="grid w-full grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10 lg:w-auto lg:gap-8">
             
             {/* Product */}
             <div>

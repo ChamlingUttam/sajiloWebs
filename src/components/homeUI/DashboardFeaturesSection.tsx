@@ -39,7 +39,8 @@ const features = [
 export default function DashboardFeaturesSection() {
   return (
     <section className="w-full overflow-hidden bg-white py-10 sm:py-14 lg:py-16">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10">
+      {/* <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10"> */}
+      <div className="mx-auto w-full container"> 
         {/* Header */}
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
           <span className="mb-4 inline-block rounded-sm bg-[#3B1547] px-3 py-2 text-xs font-medium text-white">

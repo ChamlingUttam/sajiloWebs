@@ -16,19 +16,16 @@ import RightFaq from "./RightFaq";
 
 const Faq = () => {
   return (
-    <section className="w-full bg-white py-16 text-[#3E1647] sm:py-20">
+    <section className="w-full bg-[#F3F1F7] py-16 text-[#3E1647] sm:py-20">
       <div
         className="
           mx-auto
           grid
           w-full
-          max-w-7xl
+          container
           grid-cols-1
           gap-10
-          px-4
           sm:gap-12
-          sm:px-6
-          md:px-10
           lg:grid-cols-2
           lg:gap-16
         "

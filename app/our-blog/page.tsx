@@ -1,17 +1,8 @@
-// import { BlogGrid } from "./components/BlogGrid";
-// import BlogHeader from "./components/BlogHeader";
-
-// export default function BlogSection() {
-//   return (
-//     <section>
-//       <BlogHeader />
-//       <BlogGrid />
-//     </section>
-//   );
-// }
 
 
 
+
+import BookDemoSection from "@/src/components/common/BookDemoSection";
 import { BlogGrid } from "./components/BlogGrid";
 import BlogHeader from "./components/BlogHeader";
 
@@ -20,6 +11,7 @@ export default function BlogSection() {
     <main className="w-full">
       <BlogHeader />
       <BlogGrid />
+      <BookDemoSection/>
     </main>
   );
 }

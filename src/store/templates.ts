@@ -1,4 +1,4 @@
-import { Template } from "@/app/components/TemplatesSection"
+import { Template } from "@/src/components/templates/TemplatesSection"
 import { template } from "../api/api"
 import { API_ENDPOINTS } from "../api/api-endpoint"
 

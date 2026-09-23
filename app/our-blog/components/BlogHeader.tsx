@@ -18,7 +18,7 @@
 
 export default function BlogHeader() {
   return (
-    <section className="w-full bg-[#4B1D57] text-center">
+    <section className="w-full bg-[#3B1547] text-center">
       <div className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 sm:py-16 md:px-10 md:py-20">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl">

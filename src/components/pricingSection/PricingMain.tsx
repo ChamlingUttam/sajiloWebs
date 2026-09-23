@@ -2,6 +2,7 @@ import React from 'react'
 import PricingHeader from './PricingHeader'
 import PricingCard from './PricingCards'
 import PricingDownSection from './PricingDownSection'
+import BookDemoSection from '../common/BookDemoSection'
 
 const PricingMain = () => {
   return (
@@ -9,6 +10,7 @@ const PricingMain = () => {
       <PricingHeader/>
       <PricingCard/>
       <PricingDownSection/>
+      <BookDemoSection/>
     </div>
   )
 }

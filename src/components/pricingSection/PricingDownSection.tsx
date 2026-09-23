@@ -69,8 +69,8 @@ const reasons: Reason[] = [
 
 const PricingDownSection = () => {
   return (
-    <section className="w-full bg-white py-10 sm:py-14 lg:py-16">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10">
+    <section className="w-full bg-[#F3F1F7] py-10 sm:py-14 lg:py-16">
+      <div className="mx-auto w-full container">
         {/* Header */}
         <header className="flex flex-col items-center justify-center text-center">
           <h2 className="text-2xl font-bold text-[#491A53] sm:text-3xl lg:text-4xl">

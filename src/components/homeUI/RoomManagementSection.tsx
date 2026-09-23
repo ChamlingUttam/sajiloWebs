@@ -43,15 +43,13 @@ const cards = [
 
 export default function RoomManagementSection() {
   return (
-    <section className="w-full bg-white py-8 sm:py-10 lg:py-14">
+    <section className="w-full bg-white pb-8">
       <div
         className="
           mx-auto
           w-full
-          max-w-7xl
-          px-4
-          sm:px-6
-          md:px-10
+          container
+         
         "
       >
         <div

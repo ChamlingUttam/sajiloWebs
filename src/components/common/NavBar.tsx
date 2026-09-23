@@ -18,23 +18,23 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full  bg-[#3E1647] text-white">
-      <div className="mx-auto w-full flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 md:px-10">
+    <nav className="sticky top-0 z-50 w-full  bg-[#3B1547] text-white">
+      <div className=" container py-6">
+        <div className="mx-auto w-full flex items-center justify-between  ">
+
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2.5"
           onClick={() => setOpen(false)}
-        >
+          >
           <Image
             src="/aaaa.png"
             alt="Sajilo Webs"
             width={10}
             height={10}
             className="h-8 w-8 rounded-md sm:h-9 sm:w-9"
-          />
-          <span className="hidden text-base font-semibold tracking-tight lg:block">
-            Sajilo Webs
-          </span>
+            />
+        
         </Link>
 
         <ul className="hidden items-center gap-6 text-sm font-medium md:flex lg:gap-8">
@@ -44,7 +44,7 @@ export default function Navbar() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className="text-gray-300 transition-colors text-md lg:text-xl hover:text-white"
-              >
+                >
                 {item.name}
               </Link>
             </li>
@@ -56,8 +56,8 @@ export default function Navbar() {
             <Button
               variant="secondary"
               size="sm"
-              className="px-8 py-4 transition-transform cursor-pointer hover:scale-[1.03] rounded-sm"
-            >
+              className="px-8 py-5 transition-transform cursor-pointer hover:scale-[1.03] rounded-sm"
+              >
               Login
             </Button>
           </a>
@@ -68,8 +68,8 @@ export default function Navbar() {
 >
             <Button
               size="sm"
-              className="bg-[#FF751F] px-8 py-4 cursor-pointer text-[#EDE8EE] transition-transform  hover:scale-[1.03] hover:bg-[#e15e0d]"
-            >
+              className="bg-[#FF751F] px-8 py-5 cursor-pointer text-[#EDE8EE] transition-transform  hover:scale-[1.03] hover:bg-[#e15e0d]"
+              >
               Demo
             </Button>
           </a>
@@ -83,6 +83,7 @@ export default function Navbar() {
         >
           <Menu size={24} />
         </button>
+             </div>
       </div>
 
       {/* Dim backdrop */}

@@ -16,16 +16,16 @@ import React from "react";
 
 const BookDemoSection = () => {
   return (
-    <section className="w-full bg-white py-8 sm:py-10 lg:py-14">
+    <section className="w-full bg-[#F3F1F7] py-8 sm:py-10 lg:py-14">
       {/* Same container as Navbar / FAQ / Templates / RoomManagement */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10">
+      <div className="mx-auto w-full container">
         <div
           className="
             relative
             w-full
             overflow-hidden
             rounded-xl
-            bg-[#491A53]
+            bg-[#3B1547]
             p-6
             sm:rounded-3xl
             sm:p-8
@@ -161,11 +161,8 @@ const BookDemoSection = () => {
             className="
               relative
               z-10
-              mt-4
               flex
               justify-center
-              sm:mt-5
-              md:mt-0
             "
           >
             <div

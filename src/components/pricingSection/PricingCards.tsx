@@ -38,20 +38,17 @@ const PricingCard = () => {
   }
 
   return (
-    <section className="w-full bg-[#FCFAFC] py-12 sm:py-14 lg:py-16">
+    <section className="w-full bg-[#F3F1F7] py-12 sm:py-14 lg:py-16">
       <div
         className="
           mx-auto
           grid
           w-full
-          max-w-7xl
           grid-cols-1
           gap-5
-          px-4
-          sm:px-6
           md:grid-cols-3
-          md:px-10
           lg:gap-8
+          container
         "
       >
         {priceData?.map((price: Price) => (

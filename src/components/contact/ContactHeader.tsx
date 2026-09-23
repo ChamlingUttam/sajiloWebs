@@ -31,7 +31,7 @@ import React from "react";
 
 const ContactHeader = () => {
   return (
-    <section className="w-full bg-[#491A53] text-white">
+    <section className="w-full bg-[#3B1547] text-white">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-4 py-16 text-center sm:px-6 sm:py-20 md:px-10 lg:py-24">
         <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           Let us know how we

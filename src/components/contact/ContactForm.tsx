@@ -74,7 +74,7 @@ export default function ContactForm() {
 
   return (
     <section className="w-full bg-[#FCFAFC] py-8 sm:py-10 lg:py-14">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-4 sm:px-6 md:px-10 md:grid-cols-2 lg:gap-8">
+      <div className="mx-auto grid w-full container grid-cols-1 gap-6   md:grid-cols-2 lg:gap-8">
         {/* Contact Form */}
         <Card className="h-full w-full min-w-0 rounded-3xl border-none bg-[#491A53] text-white shadow-xl">
           <CardContent className="p-4 sm:p-6 lg:p-8">
@@ -95,7 +95,7 @@ export default function ContactForm() {
                   id="firstName"
                   placeholder="John"
                   {...register("firstName")}
-                  className="h-12 rounded-xl  text-[#EDE8EE] placeholder:text-[#EDE8EE]"
+                  className="h-12 rounded-xl border-gray-500 text-[#EDE8EE] placeholder:text-[#EDE8EE]"
                 />
 
                 {errors.firstName && (
@@ -118,7 +118,7 @@ export default function ContactForm() {
                   id="lastName"
                   placeholder="Doe"
                   {...register("lastName")}
-                  className="h-12 rounded-xl text-[#EDE8EE] placeholder:text-[#EDE8EE]"
+                  className="h-12 rounded-xl border-gray-500 text-[#EDE8EE] placeholder:text-[#EDE8EE]"
                 />
 
                 {errors.lastName && (
@@ -142,7 +142,7 @@ export default function ContactForm() {
                   type="tel"
                   placeholder="98XXXXXXXX"
                   {...register("phone")}
-                  className="h-12 rounded-xl     text-[#EDE8EE] placeholder:text-[#EDE8EE]"
+                  className="h-12 rounded-xl border-gray-500      text-[#EDE8EE] placeholder:text-[#EDE8EE]"
                 />
 
                 {errors.phone && (
@@ -166,7 +166,7 @@ export default function ContactForm() {
                   type="email"
                   placeholder="johndoe@gmail.com"
                   {...register("email")}
-                  className="h-12 rounded-xl text-[#EDE8EE] placeholder:text-[#EDE8EE]"
+                  className="h-12 rounded-xl border-gray-500 text-[#EDE8EE] placeholder:text-[#EDE8EE]"
                 />
 
                 {errors.email && (
@@ -189,7 +189,7 @@ export default function ContactForm() {
                   id="message"
                   placeholder="Tell us how can we help you..."
                   {...register("message")}
-                  className="min-h-32 resize-none rounded-xl text-[#EDE8EE] placeholder:text-[#EDE8EE]"
+                  className="min-h-32 resize-none rounded-xl border-gray-500 text-[#EDE8EE] placeholder:text-[#EDE8EE]"
                 />
 
                 {errors.message && (
@@ -226,53 +226,28 @@ export default function ContactForm() {
         </Card>
 
         {/* Need Help */}
-        <div className="flex h-full min-w-0 flex-col justify-center rounded-3xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6 lg:p-8">
-          <h3 className="mb-6 text-lg font-semibold text-[#491A53]">
-            Need Help?
-          </h3>
-
-          <ul className="flex flex-col gap-5 text-sm">
-            {/* Email */}
-            <li className="flex min-w-0 items-center gap-3 text-[#491A53]">
-              <Mail
-                size={18}
-                className="shrink-0 text-[#491A53]"
-              />
-
-              <a
-                href="mailto:hello@sajilows.com"
-                className="break-all hover:underline"
-              >
-                hello@sajilows.com
-              </a>
-            </li>
-
-            {/* Phone */}
-            <li className="flex items-center gap-3 text-[#491A53]">
-              <Phone
-                size={18}
-                className="shrink-0 text-[#491A53]"
-              />
-
-              <a
-                href="tel:+9749746888890"
-                className="hover:underline"
-              >
-                974-6888890
-              </a>
-            </li>
-
-            {/* Location */}
-            <li className="flex items-center gap-3 text-[#491A53]">
-              <MapPin
-                size={18}
-                className="shrink-0 text-[#491A53]"
-              />
-
-              <span>Pragati Chowk, Itahari</span>
-            </li>
-          </ul>
-        </div>
+        {/* <div className="flex h-full  flex-col justify-center rounded-3xl border border-gray-200 bg-white  shadow-sm sm:p-6 ">
+         <iframe
+              title="Itahari Chowk, Sunsari, Nepal"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3566.177944985937!2d87.27373857441983!3d26.664200076814564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef75e63a0fc0cb%3A0xf1fe8aefbfb3cd97!2sItahari%20Chowk!5e0!3m2!1sen!2snp!4v1726000000000!5m2!1sen!2snp"
+              width="100%"
+              height="100%"
+              style={{ minHeight: "480px", border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+        </div> */}
+        <div className="relative h-88 w-full overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm sm:h-105 lg:h-128">
+  <iframe
+    title="Itahari Chowk, Sunsari, Nepal"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3566.177944985937!2d87.27373857441983!3d26.664200076814564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef75e63a0fc0cb%3A0xf1fe8aefbfb3cd97!2sItahari%20Chowk!5e0!3m2!1sen!2snp!4v1726000000000!5m2!1sen!2snp"
+    className="absolute inset-0 h-full w-full border-0"
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
       </div>
     </section>
   );
@@ -280,3 +255,49 @@ export default function ContactForm() {
 
 
 
+
+//  <h3 className="mb-6 text-lg font-semibold text-[#491A53]">
+//             Need Help?
+//           </h3>
+
+//           <ul className="flex flex-col gap-5 text-sm">
+//             {/* Email */}
+//             <li className="flex min-w-0 items-center gap-3 text-[#491A53]">
+//               <Mail
+//                 size={18}
+//                 className="shrink-0 text-[#491A53]"
+//               />
+
+//               <a
+//                 href="mailto:hello@sajilows.com"
+//                 className="break-all hover:underline"
+//               >
+//                 hello@sajilows.com
+//               </a>
+//             </li>
+
+//             {/* Phone */}
+//             <li className="flex items-center gap-3 text-[#491A53]">
+//               <Phone
+//                 size={18}
+//                 className="shrink-0 text-[#491A53]"
+//               />
+
+//               <a
+//                 href="tel:+9749746888890"
+//                 className="hover:underline"
+//               >
+//                 974-6888890
+//               </a>
+//             </li>
+
+//             {/* Location */}
+//             <li className="flex items-center gap-3 text-[#491A53]">
+//               <MapPin
+//                 size={18}
+//                 className="shrink-0 text-[#491A53]"
+//               />
+
+//               <span>Pragati Chowk, Itahari</span>
+//             </li>
+//           </ul>

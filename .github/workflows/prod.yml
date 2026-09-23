@@ -25,8 +25,11 @@ jobs:
     - name: Build application
       env:
         NEXT_PUBLIC_FRONTEND_URL: https://sajilows.com/
-        NEXT_PUBLIC_SERVER_URL: https://sajilowebs.product-api.hamroyouthit.com/
-        NEXT_PUBLIC_API_URL: https://api.sajilows.com
+        NEXT_PUBLIC_SAJILO_URL: https://sajilowebs.product-api.hamroyouthit.com/
+        NEXT_PUBLIC_TEMPLATE_URL: https://api.sajilows.com/
+        NEXT_PUBLIC_SAJILOWEBS_API_URL: https://sajilowebs.product-api.hamroyouthit.com
+        NEXT_PUBLIC_TEMPLATES_API_URL: https://api.sajilows.com
+        NEXT_PUBLIC_APP_URL: https://app.sajilows.com/login
       run: npm run build
 
     - name: Prune devDependencies
