@@ -6,7 +6,7 @@ const TemplateHeader = () => {
            <div className="mb-10 flex flex-col gap-6 pt-8 text-left md:flex-row md:items-end md:justify-between">
 
           {/* Heading */}
-          <div>
+          <div className='pt-5'>
             <h2 className="text-2xl font-bold leading-tight text-[#EDE8EE] sm:text-3xl md:text-5xl">
               Beautiful Templates Ready
             </h2>
@@ -17,8 +17,8 @@ const TemplateHeader = () => {
           </div>
 
           {/* Description + CTA */}
-          <div className="flex flex-col items-start gap-4">
-            <p className="max-w-md text-left text-xl text-[#EDE8EE] ">
+          <div className="flex flex-col items-start gap-4 ">
+            <p className="max-w-md text-left text-xl  text-[#EDE8EE] ">
               Choose from professionally designed templates tailored for every
               type of hospitality property.
             </p>

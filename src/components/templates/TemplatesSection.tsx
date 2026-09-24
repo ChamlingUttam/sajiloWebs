@@ -30,7 +30,7 @@ export default function TemplatesSection() {
 
   if (isLoading) {
     return (
-      <section className="w-full bg-white py-10">
+      <section className="w-full bg-[#3B1547] py-10">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 6 }).map((_, index) => (
@@ -63,7 +63,7 @@ export default function TemplatesSection() {
     <section
       id="templates"
       ref={sectionRef}
-      className="scroll-mt-20 w-full bg-[#3B1547] py-16 sm:py-20"
+      className="scroll-mt-20 w-full bg-[#3B1547] "
     >
       {/* Same container as Navbar and RoomManagement */}
       <div className="mx-auto w-full ">
@@ -75,7 +75,7 @@ export default function TemplatesSection() {
           {visibleTemplates?.map((tpl) => (
             <Card
               key={tpl?.id}
-              className="w-full min-w-0 cursor-pointer border-0 bg-transparent shadow-none"
+              className="w-full  cursor-pointer border-0 bg-transparent shadow-none"
             >
               <CardContent className="p-0">
 

@@ -34,8 +34,8 @@ import Image from "next/image";
 
 export default function DashboardPreview() {
   return (
-    <section className="w-full overflow-hidden bg-[#3B1547]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full overflow-hidden bg-[#3B1547] pb-10">
+      <div className="container mx-auto w-full">
         <div
           className="rounded-2xl sm:rounded-3xl bg-cover bg-center bg-no-repeat p-2 sm:p-3"
           style={{

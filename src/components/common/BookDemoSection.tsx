@@ -16,7 +16,7 @@ import React from "react";
 
 const BookDemoSection = () => {
   return (
-    <section className="w-full bg-[#F3F1F7] py-8 sm:py-10 lg:py-14">
+    <section className="w-full bg-[#F3F1F7] py-8 ">
       {/* Same container as Navbar / FAQ / Templates / RoomManagement */}
       <div className="mx-auto w-full container">
         <div
