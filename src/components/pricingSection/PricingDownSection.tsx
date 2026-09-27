@@ -72,7 +72,7 @@ const PricingDownSection = () => {
     <section className="w-full bg-[#F3F1F7]  ">
       <div className="mx-auto w-full container">
         {/* Header */}
-        <header className="flex flex-col items-center justify-center text-center">
+        <header className= "pricing-reason-header flex flex-col items-center justify-center text-center">
           <h2 className="text-2xl font-bold text-[#491A53] sm:text-3xl lg:text-4xl">
             Why Choose Us?
           </h2>
@@ -102,6 +102,7 @@ const PricingDownSection = () => {
               <Card
                 key={reason.id}
                 className="
+                pricing-reason-card
                   w-full
                   min-w-0
                   border

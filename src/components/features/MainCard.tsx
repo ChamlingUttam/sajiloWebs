@@ -1,30 +1,85 @@
+
+
 // import { CardOne } from "./CardOne";
 // import { CardTwo } from "./CardTwo";
 
 // export function MainCard() {
 //   return (
-//     // <div className="grid w-full grid-cols-1 gap-5 px-4 pb-10 sm:px-6 md:px-10 lg:grid-cols-2">
-//     <div className="w-full">
-//       <div className="container flex justify-between gap-10 w-full mx-auto">
-//       <CardOne />
-//       <CardTwo />
+//     <section className="w-full">
+//       <div className="container ">
+//         <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 lg:gap-10">
+//           <CardOne />
+//           <CardTwo />
+//         </div>
 //       </div>
-//     </div>
+//     </section>
 //   );
 // }
 
 
 
+
+
+
+
+
+
+
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { CardOne } from "./CardOne";
 import { CardTwo } from "./CardTwo";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function MainCard() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      tl.from(".card-one", {
+        x: -100,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      }).from(
+        ".card-two",
+        {
+          x: 100,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "<"
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full">
-      <div className="container ">
+    <section ref={sectionRef} className="w-full overflow-hidden">
+      <div className="container">
         <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 lg:gap-10">
-          <CardOne />
-          <CardTwo />
+          <div className="card-one">
+            <CardOne />
+          </div>
+
+          <div className="card-two">
+            <CardTwo />
+          </div>
         </div>
       </div>
     </section>
