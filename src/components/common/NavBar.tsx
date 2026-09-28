@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -12,26 +13,28 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Features", href: "/#features" },
     { name: "Price", href: "/pricing" },
-    { name: "Blog", href: "/OurBlog" },
+    { name: "Blog", href: "/our-blog" },
     { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full  bg-[#3E1647] text-white">
-      <div className="mx-auto w-full flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 md:px-10">
+    <nav className="sticky top-0 z-50 w-full  bg-[#3B1547] text-white">
+      <div className=" container py-6">
+        <div className="mx-auto w-full flex items-center justify-between  ">
+
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2.5"
           onClick={() => setOpen(false)}
-        >
-          <img
+          >
+          <Image
             src="/aaaa.png"
             alt="Sajilo Webs"
+            width={10}
+            height={10}
             className="h-8 w-8 rounded-md sm:h-9 sm:w-9"
-          />
-          <span className="hidden text-base font-semibold tracking-tight sm:block">
-            Sajilo Webs
-          </span>
+            />
+        
         </Link>
 
         <ul className="hidden items-center gap-6 text-sm font-medium md:flex lg:gap-8">
@@ -40,8 +43,8 @@ export default function Navbar() {
               <Link
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-gray-300 transition-colors text-xl hover:text-white"
-              >
+                className="text-gray-300 transition-colors text-md lg:text-xl hover:text-white"
+                >
                 {item.name}
               </Link>
             </li>
@@ -49,20 +52,24 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a href="https://app.sajilows.com/login">
+          <a href={`${process.env.NEXT_PUBLIC_APP_URL}`}>
             <Button
               variant="secondary"
               size="sm"
-              className="transition-transform hover:scale-[1.03]"
-            >
+              className="px-8 py-5 transition-transform cursor-pointer hover:scale-[1.03] rounded-sm"
+              >
               Login
             </Button>
           </a>
-          <a  href="https://app.sajilows.com/login?email=hotel@gmail.com&password=12345678">
+         <a
+  href={`${process.env.NEXT_PUBLIC_APP_URL}?email=${encodeURIComponent(
+    "hotel@gmail.com"
+  )}&password=${encodeURIComponent("12345678")}`}
+>
             <Button
               size="sm"
-              className="bg-[#FF751F] transition-transform hover:scale-[1.03] hover:bg-[#e15e0d]"
-            >
+              className="bg-[#FF751F] px-8 py-5 cursor-pointer text-[#EDE8EE] transition-transform  hover:scale-[1.03] hover:bg-[#e15e0d]"
+              >
               Demo
             </Button>
           </a>
@@ -76,11 +83,12 @@ export default function Navbar() {
         >
           <Menu size={24} />
         </button>
+             </div>
       </div>
 
       {/* Dim backdrop */}
       <div
-        className={`fixed inset-0 z-[70] bg-black/40 transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-70 bg-black/40 transition-opacity duration-300 md:hidden ${
           open
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -90,15 +98,15 @@ export default function Navbar() {
 
       {/* Right-side drawer */}
       <div
-        className={`fixed inset-y-0 right-0 z-[80] flex h-full w-full sm:w-[85%] sm:max-w-sm flex-col bg-white text-[#3E1647] shadow-2xl transition-transform duration-300 ease-in-out md:hidden ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+  className={`fixed inset-y-0 right-0 z-80 flex h-full w-[80%] flex-col bg-white text-[#3E1647] shadow-2xl transition-transform duration-300 ease-in-out md:hidden ${
+    open ? "translate-x-0" : "translate-x-full"
+  }`}
+>
 {/* Drawer header */}
 <div className="flex items-center justify-between px-5 py-4">
   <div className="flex items-center gap-2.5">
     <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#3E1647] shrink-0">
-      <img src="/aaaa.png" alt="Sajilo Webs" width={20} height={20} className="h-5 w-5 object-contain" />
+      <Image src="/aaaa.png" alt="Sajilo Webs" width={20} height={20} className="h-5 w-5 object-contain" />
     </div>
     <span className="text-base font-semibold tracking-tight text-[#3E1647]">Sajilo Webs</span>
   </div>
@@ -131,17 +139,22 @@ export default function Navbar() {
         <div className="flex-1" />
 
         <div className="border-t border-gray-100 p-5 flex flex-col gap-2.5">
-          <a href="https://app.sajilows.com/login" onClick={() => setOpen(false)}>
+          <a href={`${process.env.NEXT_PUBLIC_APP_URL}`} onClick={() => setOpen(false)}>
             <Button
               variant="outline"
-              className="w-full border-[#3E1647]/20 py-6 text-base text-[#3E1647] hover:bg-gray-50"
+              className="w-full cursor-pointer border-[#3E1647]/20 py-4 text-base text-[#3E1647] hover:bg-gray-50"
             >
               Login
             </Button>
           </a>
-          <a  href="https://app.sajilows.com/login?email=hotel%40gmail.com&password=12345678" onClick={() => setOpen(false)}>
-            <Button className="w-full bg-[#3E1647] py-6 text-base hover:bg-[#4d1c59]">
-              Get Started →
+          <a
+  href={`${process.env.NEXT_PUBLIC_APP_URL}?email=${encodeURIComponent(
+    "hotel@gmail.com"
+  )}&password=${encodeURIComponent("12345678")}`}
+  onClick={() => setOpen(false)}
+>
+            <Button className="w-full bg-[#3E1647] cursor-pointer text-[#EDE8EE] py-4 text-base hover:bg-[#4d1c59]">
+              Demo
             </Button>
           </a>
         </div>

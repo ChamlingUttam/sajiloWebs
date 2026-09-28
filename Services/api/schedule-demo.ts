@@ -16,4 +16,4 @@ export type ScheduleDemoPayload = {
 };
 
 export const scheduleDemo = (data: ScheduleDemoPayload) =>
-  api.post("/public/schedule_demo", data);
+  api.post("api/v1/public/schedule_demo", data);

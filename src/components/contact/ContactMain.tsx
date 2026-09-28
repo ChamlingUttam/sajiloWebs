@@ -1,14 +1,17 @@
-import React from 'react'
-import ContactHeader from './ContactHeader'
-import ContactForm from './ContactForm'
+import ContactHeader from "./ContactHeader";
+import ContactForm from "./ContactForm";
+import BookDemoSection from "../common/BookDemoSection";
 
 const ContactMain = () => {
   return (
-    <div>
-      <ContactHeader/>
-      <ContactForm/>
-    </div>
-  )
-}
+    <main className="w-full">
+      <div className="">
+      <ContactHeader />
+      <ContactForm />
+      <BookDemoSection/>
+      </div>
+    </main>
+  );
+};
 
-export default ContactMain
+export default ContactMain;

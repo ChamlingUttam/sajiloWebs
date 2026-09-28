@@ -1,13 +1,24 @@
+
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-    images: {
+  images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "sajilowebs.product-api.hamroyouthit.com",
+        hostname: new URL(process.env.NEXT_PUBLIC_SAJILOWEBS_API_URL!).hostname,
         pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: new URL(process.env.NEXT_PUBLIC_TEMPLATES_API_URL!).hostname,
+        pathname: "/media/**",
+      },
+      {
+        protocol: "https",
+        hostname: new URL(process.env.NEXT_PUBLIC_TEMPLATES_API_URL!).hostname,
+        pathname: "/media/**",
       },
     ],
   },

@@ -118,11 +118,14 @@ export default function DemoForm() {
   }
 
   return (
-    <div className="bg-[#4A1D57] rounded-2xl p-5 sm:p-7 text-white">
-      <h3 className="font-semibold text-lg sm:text-xl mb-1">
+
+    <section>
+      <div>
+         <div className="bg-[#4A1D57] rounded-2xl p-5 sm:p-7  text-white">
+      <h3 className="font-bold text-3xl  mb-1">
         Tell us about your organization
       </h3>
-      <p className="text-purple-200/60 text-xs sm:text-sm mb-6">
+      <p className="text-[#D3C8D6] text-base mb-6">
         Fill in the details below and our experts will prepare a custom demo for
         you.
       </p>
@@ -283,6 +286,9 @@ export default function DemoForm() {
         </button>
       </form>
     </div>
+      </div>
+    </section>
+   
   );
 }
 
